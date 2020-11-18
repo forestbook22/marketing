@@ -14,20 +14,20 @@ import javax.persistence.Table;
 @Table(name = "users")
 @NamedQueries({
     @NamedQuery(
-            name = "getAllEmployees",
+            name = "getAllUsers",
             query = "SELECT u FROM User AS u ORDER BY u.id DESC"
             ),
     @NamedQuery(
-            name = "getEmployeesCount",
+            name = "getUsersCount",
             query = "SELECT COUNT(u) FROM User AS u"
             ),
     @NamedQuery(
-            name = "checkRegisteredCode",
-            query = "SELECT COUNT(u) FROM User AS u WHERE u.code = :code"
+            name = "checkRegisteredName",
+            query = "SELECT COUNT(u) FROM User AS u WHERE u.name = :code"
             ),
     @NamedQuery(
-            name = "checkLoginCodeAndPassword",
-            query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.code = :code AND u.password = :pass"
+            name = "checkLoginNameAndPassword",
+            query = "SELECT u FROM User AS u WHERE u.delete_flag = 0 AND u.name = :code AND u.password = :pass"
             )
 })
 @Entity
@@ -36,9 +36,6 @@ public class User {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(name = "code", nullable = false, unique = true)
-    private String code;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -64,14 +61,6 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public String getName() {

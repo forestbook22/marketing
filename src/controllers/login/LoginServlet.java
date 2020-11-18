@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
                     );
             //ユーザーネームとパスワードが正しいかチェック
             try{
-                u = em.createNamedQuery("checkLoginCodeAndPassword" , User.class)
+                u = em.createNamedQuery("checkLoginNameAndPassword" , User.class)
                         .setParameter("code",code)
                         .setParameter("pass",password)
                         .getSingleResult();

@@ -2,6 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
-        <h2>～へようこそ</h2>
+        <c:if test = "${flush != null}" >
+            <div id = "flush_success">
+                <c:out value="${flush}"></c:out>
+            </div>
+        </c:if>
+        <h2>マーケティングチェッカ―へようこそ</h2>
+        <h3>【自分の戦略一覧】</h3>
     </c:param>
 </c:import>

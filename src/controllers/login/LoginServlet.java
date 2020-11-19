@@ -50,12 +50,12 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //認証結果を格納
         Boolean check_result = false;
-        String code = request.getParameter("code");
+        String name = request.getParameter("name");
         String plain_pass = request.getParameter("password");
 
         User u = null;
 
-        if(code != null && !code.equals("") && plain_pass != null && !plain_pass.equals("")){
+        if(name != null && !name.equals("") && plain_pass != null && !plain_pass.equals("")){
             EntityManager em = DBUtil.createEntityManager();
             String password = EncryptUtil.getPasswordEncrypt(
                     plain_pass,
@@ -64,7 +64,7 @@ public class LoginServlet extends HttpServlet {
             //ユーザーネームとパスワードが正しいかチェック
             try{
                 u = em.createNamedQuery("checkLoginNameAndPassword" , User.class)
-                        .setParameter("code",code)
+                        .setParameter("name",name)
                         .setParameter("pass",password)
                         .getSingleResult();
             }catch(NoResultException ex){}
@@ -79,7 +79,7 @@ public class LoginServlet extends HttpServlet {
             //認証できなかったらログイン画面へ
             request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
-            request.setAttribute("code", code);
+            request.setAttribute("name", name);
 
             RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
             rd.forward(request, response);

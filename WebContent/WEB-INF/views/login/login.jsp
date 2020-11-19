@@ -15,7 +15,7 @@
         <h2>ログイン</h2>
         <form method="POST" action="<c:url value='/login' />">
             <label for="code">ユーザーネーム</label><br />
-            <input type="text" name="code" value="${code}" />
+            <input type="text" name="code" value="${name}" />
             <br /><br />
 
             <label for="password">パスワード</label><br />

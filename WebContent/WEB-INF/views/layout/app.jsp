@@ -15,12 +15,12 @@
                     <h1><a href="<c:url value='/' />">マーケティングチェッカ―</a></h1>&nbsp;&nbsp;&nbsp;
                     <c:if test="${sessionScope.login_user != null}">
                         <c:if test="${sessionScope.login_user.admin_flag == 1}">
-                            <a href="<c:url value='/employees/index' />">ユーザー管理</a>&nbsp;
+                            <a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
                         </c:if>
                     </c:if>
                 </div>
                 <c:if test="${sessionScope.login_user != null}">
-                    <div id="employee_name">
+                    <div id="user_name">
                         <c:out value="${sessionScope.login_user.name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
                         <a href="<c:url value='/logout' />">ログアウト</a>
                     </div>

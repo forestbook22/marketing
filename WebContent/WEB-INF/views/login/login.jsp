@@ -15,7 +15,7 @@
         <h2>ログイン</h2>
         <form method="POST" action="<c:url value='/login' />">
             <label for="code">ユーザーネーム</label><br />
-            <input type="text" name="code" value="${name}" />
+            <input type="text" name="name" value="${name}" />
             <br /><br />
 
             <label for="password">パスワード</label><br />
@@ -25,6 +25,5 @@
             <input type="hidden" name="_token" value="${_token}" />
             <button type="submit">ログイン</button>
         </form>
-        <p><a href="<c:url value='/users/new' />">新規ユーザー登録</a></p>
     </c:param>
 </c:import>

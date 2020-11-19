@@ -75,7 +75,7 @@ public class LoginServlet extends HttpServlet {
             }
         }
 
-        if(check_result){
+        if(!check_result){
             //認証できなかったらログイン画面へ
             request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
@@ -85,6 +85,8 @@ public class LoginServlet extends HttpServlet {
             rd.forward(request, response);
         }else{
             //認証出来たらログインしてトップページへ
+            request.getSession().setAttribute("login_user", u);
+
             request.getSession().setAttribute("flush", "ログインしました");
             response.sendRedirect(request.getContextPath() + "/");
         }

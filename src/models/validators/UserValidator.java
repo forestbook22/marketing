@@ -6,7 +6,7 @@ import java.util.List;
 import models.User;
 
 public class UserValidator {
-    public static List<String> validate(User u, Boolean code_duplicate_check_flag, Boolean password_check_flag) {
+    public static List<String> validate(User u, Boolean name_duplicate_check_flag, Boolean password_check_flag) {
         List<String> errors = new ArrayList<String>();
 
         String name_error = _validateName(u.getName());

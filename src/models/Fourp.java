@@ -1,5 +1,6 @@
 package models;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -41,6 +42,9 @@ public class Fourp {
     @Column(name = "user_id", nullable = false)
     private String user;
 
+    @Column(name = "fourp_date", nullable = false)
+    private Date fourp_date;
+
     @Column(name = "title", length = 255, nullable = false)
     private String title;
 
@@ -80,6 +84,14 @@ public class Fourp {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public Date getFourp_date() {
+        return fourp_date;
+    }
+
+    public void setFourp_date(Date fourp_date) {
+        this.fourp_date = fourp_date;
     }
 
     public String getTitle() {

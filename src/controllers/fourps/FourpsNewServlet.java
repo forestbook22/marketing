@@ -1,4 +1,4 @@
-package controllers.fourp;
+package controllers.fourps;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -15,14 +15,14 @@ import models.Fourp;
 /**
  * Servlet implementation class FourpNewServlet
  */
-@WebServlet("/fourp/new")
-public class FourpNewServlet extends HttpServlet {
+@WebServlet("/fourps/new")
+public class FourpsNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FourpNewServlet() {
+    public FourpsNewServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

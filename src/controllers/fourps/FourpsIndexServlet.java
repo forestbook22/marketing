@@ -1,4 +1,4 @@
-package controllers.fourp;
+package controllers.fourps;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,14 +17,14 @@ import utils.DBUtil;
 /**
  * Servlet implementation class FourpIndexServlet
  */
-@WebServlet("/FourpIndexServlet")
-public class FourpIndexServlet extends HttpServlet {
+@WebServlet("/fourps/index")
+public class FourpsIndexServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FourpIndexServlet() {
+    public FourpsIndexServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

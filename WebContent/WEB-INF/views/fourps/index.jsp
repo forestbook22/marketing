@@ -41,7 +41,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/select/select.jsp' />">新規戦略の登録</a></p>
+        <p><a href="<c:url value='/fourps/new' />">新規4Pの登録</a></p>
 
     </c:param>
 </c:import>

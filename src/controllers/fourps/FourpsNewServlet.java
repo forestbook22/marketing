@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import models.Fourp;
 
 /**
- * Servlet implementation class FourpNewServlet
+ * Servlet implementation class FourpsNewServlet
  */
 @WebServlet("/fourps/new")
 public class FourpsNewServlet extends HttpServlet {
@@ -28,9 +28,9 @@ public class FourpsNewServlet extends HttpServlet {
     }
 
     /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("_token", request.getSession().getId());
 
         Fourp f = new Fourp();
@@ -40,5 +40,4 @@ public class FourpsNewServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/fourps/new.jsp");
         rd.forward(request, response);
     }
-
 }

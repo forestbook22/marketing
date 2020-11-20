@@ -30,7 +30,7 @@ import javax.persistence.Table;
             query = "SELECT f FROM Fourp AS f WHERE f.user = :user ORDER BY f.id DESC"
             ),
     @NamedQuery(
-            name = "getMyForpsCount",
+            name = "getMyFourpsCount",
             query = "SELECT COUNT(f) FROM Fourp AS f WHERE f.user = :user"
             )
 })
@@ -42,7 +42,7 @@ public class Fourp {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name = "fourp_date", nullable = false)

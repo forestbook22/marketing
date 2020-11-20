@@ -9,5 +9,6 @@
         </c:if>
         <h2>マーケティングチェッカ―へようこそ</h2>
         <h3>【自分の戦略一覧】</h3>
+        <p><a href="<c:url value='/select/select.jsp' />">新規戦略の登録</a></p>
     </c:param>
 </c:import>

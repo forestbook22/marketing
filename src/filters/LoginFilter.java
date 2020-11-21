@@ -49,23 +49,23 @@ public class LoginFilter implements Filter {
             User u = (User)session.getAttribute("login_user");
 
             if(!servlet_path.equals("/login")) {        // ログイン画面以外について
-                // ログアウトしている状態であれば
-                // ログイン画面にリダイレクト
-                if(u == null) {
-                    ((HttpServletResponse)response).sendRedirect(context_path + "/login");
-                    return;
-                }
-
-                // ユーザー管理機能は管理者のみが閲覧できるようにする
-                if(servlet_path.matches("/users.*") && u.getAdmin_flag() == 0) {
-                    ((HttpServletResponse)response).sendRedirect(context_path + "/");
-                    return;
+                //新規ユーザー登録のみ除外
+                if(!servlet_path.matches("/users/new.*") && !servlet_path.matches("/users/create.*")){
+                    // ログアウトしている状態であればログイン画面にリダイレクト
+                    if(u == null) {
+                        ((HttpServletResponse)response).sendRedirect(context_path + "/login");
+                        return;
+                    }
+                        // ユーザー管理機能は管理者のみが閲覧できるようにする
+                    if(servlet_path.matches("/users.*") && u.getAdmin_flag() == 0) {
+                        ((HttpServletResponse)response).sendRedirect(context_path + "/");
+                        return;
+                    }
                 }
             } else {
                 // ログインしているのにログイン画面を表示させようとした場合はシステムのトップページにリダイレクト
-
-                    if(u != null) {
-                        ((HttpServletResponse)response).sendRedirect(context_path + "/");
+                if(u != null) {
+                    ((HttpServletResponse)response).sendRedirect(context_path + "/");
                     return;
                 }
             }

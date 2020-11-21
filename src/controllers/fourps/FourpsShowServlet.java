@@ -38,7 +38,7 @@ public class FourpsShowServlet extends HttpServlet {
 
         em.close();
 
-        request.setAttribute("report", f);
+        request.setAttribute("fourp", f);
         request.setAttribute("_token", request.getSession().getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/fourps/show.jsp");

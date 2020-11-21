@@ -16,13 +16,9 @@
 
 <label for="password">パスワード</label><br />
 <input type="password" name="password" />
-<br /><br />
 
-<label for="admin_flag">権限</label><br />
-<select name="admin_flag">
-    <option value="0"<c:if test="${user.admin_flag == 0}"> selected</c:if>>一般</option>
-    <option value="1"<c:if test="${user.admin_flag == 1}"> selected</c:if>>管理者</option>
-</select>
+<label for="admin_flag"></label><br />
+<input type="hidden" name="admin_flag" value=0 />
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />

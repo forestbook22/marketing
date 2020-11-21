@@ -42,9 +42,6 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <h3>新規フレームワーク登録</h3>
-        <ul>
-            <li><a href="<c:url value='/fourps/new' />">4P</a></li>
-        </ul>
+        <h3><a href="<c:url value='/select' />">新規フレームワーク登録</a></h3>
     </c:param>
 </c:import>

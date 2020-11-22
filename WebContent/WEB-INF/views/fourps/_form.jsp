@@ -16,7 +16,10 @@
 
 <label for="name">氏名</label><br />
 <c:out value="${sessionScope.login_user.name}" />
-<br /><br />
+<br />
+
+<label for="frame"></label><br />
+<input type="hidden" name="frame" value="4P" />
 
 <label for="title">タイトル</label><br />
 <input type="text" name="title" value="${fourp.title}" />

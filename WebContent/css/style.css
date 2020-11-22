@@ -148,3 +148,28 @@ table#fourp_list .fourp_title {
 table#fourpt_list .fourp_action {
     width: 13%;
 }
+
+table#strategy_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#strategy_list .strategy_name {
+    width: 15%;
+    padding: 10px 2%;
+}
+table#strategy_list .strategy_date {
+    width: 15%;
+}
+
+table#strategy_list .strategy_frame {
+    width: 20%;
+}
+
+table#strategy_list .strategy_title {
+    width: 27%;
+}
+
+table#strategy_list .strategy_action {
+    width: 13%;
+}

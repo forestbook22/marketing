@@ -1,4 +1,4 @@
-package controllers.users;
+package controllers.fourps;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -10,20 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.User;
+import models.Fourp;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class UsersDestroyServlet
+ * Servlet implementation class FourpsDestroyServlet
  */
-@WebServlet("/users/destroy")
-public class UsersDestroyServlet extends HttpServlet {
+@WebServlet("/fourps/destroy")
+public class FourpsDestroyServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UsersDestroyServlet() {
+    public FourpsDestroyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,9 +36,10 @@ public class UsersDestroyServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            User u = em.find(User.class, (Integer)(request.getSession().getAttribute("user_id")));
-            u.setDelete_flag(1);
-            u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+            Fourp f = em.find(Fourp.class, (Integer)(request.getSession().getAttribute("fourp_id")));
+
+            f.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+            f.setDelete_flag(1);
 
             em.getTransaction().begin();
             em.getTransaction().commit();
@@ -48,5 +49,4 @@ public class UsersDestroyServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/fourps/index");
         }
     }
-
 }

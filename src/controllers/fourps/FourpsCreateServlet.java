@@ -51,7 +51,7 @@ public class FourpsCreateServlet extends HttpServlet {
                 fourp_date = Date.valueOf(request.getParameter("fourp_date"));
             }
             f.setFourp_date(fourp_date);
-
+            f.setFrame(request.getParameter("frame"));
             f.setTitle(request.getParameter("title"));
             f.setProduct(request.getParameter("product"));
             f.setPrice(request.getParameter("price"));
@@ -61,6 +61,7 @@ public class FourpsCreateServlet extends HttpServlet {
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             f.setCreated_at(currentTime);
             f.setUpdated_at(currentTime);
+            f.setDelete_flag(0);
 
             List<String> errors = FourpValidator.validate(f);
             if(errors.size() > 0) {

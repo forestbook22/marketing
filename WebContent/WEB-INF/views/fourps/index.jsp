@@ -19,10 +19,14 @@
                 </tr>
                 <c:forEach var="fourp" items="${fourps}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <td class="fourp_name"><c:out value="${fourp.user.name}" /></td>
-                        <td class="fourp_date"><fmt:formatDate value='${fourp.fourp_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="fourp_title">${fourp.title}</td>
-                        <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">詳細を見る</a></td>
+                        <c:choose>
+                             <c:when test="${fourp.delete_flag == 0}">
+                                 <td class="fourp_name"><c:out value="${fourp.user.name}" /></td>
+                                 <td class="fourp_date"><fmt:formatDate value='${fourp.fourp_date}' pattern='yyyy-MM-dd' /></td>
+                                 <td class="fourp_title">${fourp.title}</td>
+                                 <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">詳細を表示</a></td>
+                             </c:when>
+                         </c:choose>
                     </tr>
                 </c:forEach>
             </tbody>

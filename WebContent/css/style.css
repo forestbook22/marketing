@@ -149,6 +149,31 @@ table#fourp_list .fourp_action {
     width: 13%;
 }
 
+table#swot_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#swot_list .swot_name {
+    width: 15%;
+    padding: 10px 2%;
+}
+table#swot_list .swot_date {
+    width: 15%;
+}
+
+table#swot_list .swot_frame {
+    width: 20%;
+}
+
+table#swot_list .swot_title {
+    width: 27%;
+}
+
+table#swot_list .swot_action {
+    width: 13%;
+}
+
 table#strategy_list th {
     font-weight: bold;
     padding: 10px 2%;

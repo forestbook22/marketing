@@ -32,11 +32,24 @@
                          </c:choose>
                     </tr>
                 </c:forEach>
+                <c:forEach var="swot" items="${swots}" varStatus="status">
+                    <tr class="row${status.count % 2}">
+                       <c:choose>
+                             <c:when test="${swot.delete_flag == 0}">
+                                 <td class="swot_name"><c:out value="${swot.user.name}" /></td>
+                                 <td class="swot_date"><fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' /></td>
+                                 <td class="swot_frame">${swot.frame}</td>
+                                 <td class="swot_title">${swot.title}</td>
+                                 <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
+                             </c:when>
+                         </c:choose>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
 
         <div id="pagination">
-            （全 ${fourps_count} 件）<br />
+            （全 ${status_count} 件）<br />
             <c:forEach var="i" begin="1" end="${((fourps_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">

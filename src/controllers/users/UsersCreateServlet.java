@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import EncryptUtil.EncryptUtil;
 import models.User;
 import models.validators.UserValidator;
 import utils.DBUtil;
+import utils.EncryptUtil;
 
 /**
  * Servlet implementation class UsersCreateServlet
@@ -49,8 +49,8 @@ public class UsersCreateServlet extends HttpServlet {
                                 (String)this.getServletContext().getAttribute("papper")
                 )
             );
-            u.setAdmin_flag(Integer.parseInt(request.getParameter("admin_flag")));
 
+            u.setAdmin_flag(Integer.parseInt(request.getParameter("admin_flag")));
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             u.setCreated_at(currentTime);
             u.setUpdated_at(currentTime);

@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import EncryptUtil.EncryptUtil;
 import models.User;
 import models.validators.UserValidator;
 import utils.DBUtil;
+import utils.EncryptUtil;
 
 /**
  * Servlet implementation class UsersUpdateServlet

@@ -59,8 +59,8 @@ public class Swot {
     private String strong;
 
     @Lob
-    @Column(name = "week", nullable = false)
-    private String week;
+    @Column(name = "weak", nullable = false)
+    private String weak;
 
     @Lob
     @Column(name = "opp", nullable = false)
@@ -130,12 +130,12 @@ public class Swot {
         this.strong = strong;
     }
 
-    public String getWeek() {
-        return week;
+    public String getWeak() {
+        return weak;
     }
 
-    public void setWeek(String week) {
-        this.week = week;
+    public void setWeak(String weak) {
+        this.weak = weak;
     }
 
     public String getOpp() {

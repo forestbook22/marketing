@@ -54,7 +54,7 @@ public class SwotsCreateServlet extends HttpServlet {
             s.setFrame(request.getParameter("frame"));
             s.setTitle(request.getParameter("title"));
             s.setStrong(request.getParameter("strong"));
-            s.setWeek(request.getParameter("week"));
+            s.setWeak(request.getParameter("weak"));
             s.setOpp(request.getParameter("opp"));
             s.setThre(request.getParameter("thre"));
             s.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));

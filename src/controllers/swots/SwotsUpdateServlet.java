@@ -46,7 +46,7 @@ public class SwotsUpdateServlet extends HttpServlet {
             s.setFrame(request.getParameter("frame"));
             s.setTitle(request.getParameter("title"));
             s.setStrong(request.getParameter("strong"));
-            s.setWeek(request.getParameter("week"));
+            s.setWeak(request.getParameter("weak"));
             s.setOpp(request.getParameter("opp"));
             s.setThre(request.getParameter("thre"));
             s.setUpdated_at(new Timestamp(System.currentTimeMillis()));

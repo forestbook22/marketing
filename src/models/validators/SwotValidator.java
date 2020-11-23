@@ -14,22 +14,22 @@ public class SwotValidator {
             errors.add(title_error);
         }
 
-        String strong_error = _validateProduct(s.getStrong());
+        String strong_error = _validateStrong(s.getStrong());
         if(!strong_error.equals("")) {
             errors.add(strong_error);
         }
 
-        String week_error = _validatePrice(s.getWeek());
-        if(!week_error.equals("")) {
-            errors.add(week_error);
+        String weak_error = _validateWeak(s.getWeak());
+        if(!weak_error.equals("")) {
+            errors.add(weak_error);
         }
 
-        String opp_error = _validatePlace(s.getOpp());
+        String opp_error = _validateOpp(s.getOpp());
         if(!opp_error.equals("")) {
             errors.add(opp_error);
         }
 
-        String thre_error = _validatePromotion(s.getThre());
+        String thre_error = _validateThre(s.getThre());
         if(!thre_error.equals("")) {
             errors.add(thre_error);
         }
@@ -44,28 +44,28 @@ public class SwotValidator {
         return "";
     }
 
-    private static String _validateProduct(String strong) {
+    private static String _validateStrong(String strong) {
         if(strong == null || strong.equals("")) {
             return "Strengthの内容を入力してください。";
             }
 
         return "";
     }
-    private static String _validatePrice(String week) {
-        if(week == null || week.equals("")) {
-            return "Weeknessの内容を入力してください。";
+    private static String _validateWeak(String weak) {
+        if(weak == null || weak.equals("")) {
+            return "Weaknessの内容を入力してください。";
             }
 
         return "";
     }
-    private static String _validatePlace(String opp) {
+    private static String _validateOpp(String opp) {
         if(opp == null || opp.equals("")) {
             return "Opportunityの内容を入力してください。";
             }
 
         return "";
     }
-    private static String _validatePromotion(String thre) {
+    private static String _validateThre(String thre) {
         if(thre == null || thre.equals("")) {
             return "Threatの内容を入力してください。";
             }

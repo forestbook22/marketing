@@ -36,43 +36,66 @@
                     </tbody>
                 </table>
                 <br>
-                <canvas id="board" width="1000" height="500"></canvas>
+                <div id="canvas_wrapper">
+                <canvas id="board" width="1000" height="450"></canvas>
+                </div>
                     <script>
                     window.onload=()=>{
-                      const board = document.querySelector("#board");
-                      const ctx = board.getContext("2d");
-                      ctx.beginPath();
-                      //横線
-                      ctx.moveTo(25, 250);          // 始点
-                      ctx.lineTo(975, 250);        // 終点
-                      //縦線
-                      ctx.moveTo(500, 0);          // 始点
-                      ctx.lineTo(500, 500);        // 終点
-                      //Strength
-                      ctx.font = "30px serif";
-                      ctx.fillText("Strength", 50, 50);
-                      ctx.strokeRect(55,55,400,150);
-                      ctx.fillText("${swot.strong}", 70, 125, 350);
-                      //Weakness
-                      ctx.font = "30px serif";
-                      ctx.fillText("Weakness", 550, 50);
-                      ctx.strokeRect(555,55,400,150);
-                      ctx.fillText("${swot.weak}", 570, 125, 350);
-                      //Opportunity
-                      ctx.font = "30px serif";
-                      ctx.fillText("Opportunity", 50, 300);
-                      ctx.strokeRect(55,305,400,150);
-                      ctx.fillText("${swot.opp}", 70, 375, 350);
-                      //Thread
-                      ctx.font = "30px serif";
-                      ctx.fillText("Thread", 550, 300);
-                      ctx.strokeRect(555,305,400,150);
-                      ctx.fillText("${swot.thre}" ,570, 375, 350);
+                          const board = document.querySelector("#board");
+                          const ctx = board.getContext("2d");
+                          var tategaki = function(context, text, x, y) {
+                              var textList = text.split('\n');
+                              var lineHeight = ctx.measureText("あ").width;
+                              textList.forEach(function(elm, i) {
+                                Array.prototype.forEach.call(elm, function(ch, j) {
+                                  ctx.fillText(ch, x-lineHeight*i, y+lineHeight*j);
+                                });
+                              });
+                            };
+                          ctx.beginPath();
+                          ctx.font = "30px serif";
+                          ctx.lineWidth = 2;
+                          ctx.strokeStyle = 'black';
 
-                      ctx.strokeStyle = "Brack";  // 線の色
-                        ctx.lineWidth = 5;           // 線の太さ
-                        ctx.stroke();
-                      }
+                          //プラス要因
+                          ctx.fillText("プラス要因", 250, 75);
+                          ctx.strokeRect(120, 20, 400, 390);
+                          //マイナス面
+                          ctx.fillText("マイナス要因", 630, 75);
+                          ctx.strokeRect(520, 20, 400, 390);
+                          //内部環境
+                          var text = "内部環境";
+                          tategaki(ctx, text, 40, 150);
+                          ctx.strokeRect(0, 110, 920, 150);
+                          //外部環境
+                          var text = "外部環境";
+                          tategaki(ctx, text, 40, 310);
+                          ctx.strokeRect(0, 260, 920, 150);
+                          //Strength
+                          ctx.fillStyle = 'red';
+                          ctx.fillRect(120,110,400,150);
+                          //Weakness
+                          ctx.fillStyle = 'blue';
+                          ctx.fillRect(520,110,400,150);
+                          //Opportunity
+                          ctx.fillStyle = 'orange';
+                          ctx.fillRect(120,260,400,150);
+                          //Thread
+                          ctx.fillStyle = 'blueviolet';
+                          ctx.fillRect(520,260,400,150);
+                          //Text
+                          ctx.fillStyle = 'white';
+                          ctx.fillText("Strength(強み)", 125, 140);
+                          ctx.fillText("${swot.strong}", 140, 205, 350);
+                          ctx.fillText("Weakness(弱み)", 525, 140);
+                          ctx.fillText("${swot.weak}", 560, 205, 350);
+                          ctx.fillText("Opportunity(機会)", 125, 290);
+                          ctx.fillText("${swot.opp}", 140, 375, 350);
+                          ctx.fillText("Thread(脅威)", 525, 290);
+                          ctx.fillText("${swot.thre}" ,560, 375, 350);
+
+                          ctx.stroke();
+                          }
                     </script>
                 <c:if test="${sessionScope.login_user.id == swot.user.id}">
                     <p><a href="<c:url value="/swots/edit?id=${swot.id}" />">このフレームワークを編集する</a></p>

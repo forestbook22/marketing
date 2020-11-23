@@ -198,3 +198,7 @@ table#strategy_list .strategy_title {
 table#strategy_list .strategy_action {
     width: 13%;
 }
+div#canvas_wrapper {
+    width: 80%;
+    margin: 0 auto;
+}

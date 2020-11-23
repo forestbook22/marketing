@@ -45,7 +45,7 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/swots/new' />">新規4Pの登録</a></p>
+        <p><a href="<c:url value='/swots/new' />">新規SWOTの登録</a></p>
 
     </c:param>
 </c:import>

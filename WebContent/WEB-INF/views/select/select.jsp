@@ -6,6 +6,7 @@
         <h2>フレームワーク選択</h2>
         <ul>
             <li><a href="<c:url value='/fourps/new' />">4P</a></li>
+            <li><a href="<c:url value='/swots/new' />">SWOT</a></li>
         </ul>
     </c:param>
 </c:import>

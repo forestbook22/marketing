@@ -10,7 +10,7 @@
         </c:if>
         <h2>マーケティングチェッカ―へようこそ</h2>
         <h3>【自分の戦略一覧】</h3>
-                <table id="strategy_list">
+        <table id="strategy_list">
             <tbody>
                 <tr>
                     <th class="strategy_name">氏名</th>
@@ -29,7 +29,7 @@
                                  <td class="fourp_title">${fourp.title}</td>
                                  <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">詳細を表示</a></td>
                              </c:when>
-                         </c:choose>
+                       </c:choose>
                     </tr>
                 </c:forEach>
                 <c:forEach var="swot" items="${swots}" varStatus="status">
@@ -49,8 +49,8 @@
         </table>
 
         <div id="pagination">
-            （全 ${status_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((fourps_count - 1) / 15) + 1}" step="1">
+            （全 ${fourp_count + swots_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((fourps_count + swots_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;

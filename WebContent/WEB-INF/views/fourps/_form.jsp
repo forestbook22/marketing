@@ -41,5 +41,11 @@
 <textarea name="promotion" rows="1" cols="50">${fourp.promotion}</textarea>
 <br /><br />
 
+<select name="show_flag">
+    <option value="0"<c:if test="${fourp.show_flag == 0}"> selected</c:if>>公開</option>
+    <option value="1"<c:if test="${fourp.show_flag == 1}"> selected</c:if>>非公開</option>
+</select>
+<br /><br />
+
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">登録</button>

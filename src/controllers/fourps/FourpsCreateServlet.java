@@ -57,6 +57,7 @@ public class FourpsCreateServlet extends HttpServlet {
             f.setPrice(request.getParameter("price"));
             f.setPlace(request.getParameter("place"));
             f.setPromotion(request.getParameter("promotion"));
+            f.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             f.setCreated_at(currentTime);

@@ -79,6 +79,9 @@ public class Fourp {
     @Column(name = "delete_flag", nullable = false)
     private Integer delete_flag;
 
+    @Column(name = "show_flag", nullable = false)
+    private Integer show_flag;
+
 
     public Integer getId() {
         return id;
@@ -176,5 +179,14 @@ public class Fourp {
     public void setDelete_flag(Integer delete_flag) {
         this.delete_flag = delete_flag;
     }
+
+    public Integer getShow_flag() {
+        return show_flag;
+    }
+
+    public void setShow_flag(Integer show_flag) {
+        this.show_flag = show_flag;
+    }
+
 
 }

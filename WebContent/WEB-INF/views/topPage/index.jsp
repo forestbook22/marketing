@@ -45,6 +45,19 @@
                          </c:choose>
                     </tr>
                 </c:forEach>
+                <c:forEach var="threec" items="${threecs}" varStatus="status">
+                    <tr class="row${status.count % 2}">
+                       <c:choose>
+                             <c:when test="${threec.delete_flag == 0}">
+                                 <td class="threec_name"><c:out value="${threec.user.name}" /></td>
+                                 <td class="threec_date"><fmt:formatDate value='${threec.threec_date}' pattern='yyyy-MM-dd' /></td>
+                                 <td class="threec_frame">${threec.frame}</td>
+                                 <td class="threec_title">${threec.title}</td>
+                                 <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">詳細を表示</a></td>
+                             </c:when>
+                         </c:choose>
+                    </tr>
+                </c:forEach>
             </tbody>
         </table>
 

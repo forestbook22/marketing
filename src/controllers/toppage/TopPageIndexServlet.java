@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Fourp;
 import models.Swot;
+import models.Threec;
 import models.User;
 import utils.DBUtil;
 
@@ -56,6 +57,12 @@ public class TopPageIndexServlet extends HttpServlet {
                                 .setMaxResults(15)
                                 .getResultList();
 
+        List<Threec> threecs = em.createNamedQuery("getMyAllThreecs", Threec.class)
+                .setParameter("user", login_user)
+                .setFirstResult(15 * (page - 1))
+                .setMaxResults(15)
+                .getResultList();
+
         long fourps_count = (long)em.createNamedQuery("getMyFourpsCount", Long.class)
                                 .setParameter("user", login_user)
                                 .getSingleResult();
@@ -64,12 +71,18 @@ public class TopPageIndexServlet extends HttpServlet {
                                 .setParameter("user", login_user)
                                 .getSingleResult();
 
+        long threecs_count = (long)em.createNamedQuery("getMyThreecsCount", Long.class)
+                                .setParameter("user", login_user)
+                                .getSingleResult();
+
         em.close();
 
         request.setAttribute("fourps", fourps);
         request.setAttribute("swots", swots);
+        request.setAttribute("threecs", threecs);
         request.setAttribute("fourps_count", fourps_count);
         request.setAttribute("swots_count", swots_count);
+        request.setAttribute("threecs_count", threecs_count);
         request.setAttribute("page", page);
 
         if(request.getSession().getAttribute("flush") != null) {

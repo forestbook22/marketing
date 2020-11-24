@@ -19,6 +19,7 @@
                         </c:if>
                         <a href="<c:url value='/fourps/index' />">4P</a>&nbsp;
                         <a href="<c:url value='/swots/index' />">SWOT</a>&nbsp;
+                        <a href="<c:url value='/threecs/index' />">3C</a>&nbsp;
                     </c:if>
                 </div>
                 <c:if test="${sessionScope.login_user != null}">

@@ -227,3 +227,16 @@ div#canvas_wrapper {
     width: 80%;
     margin: 0 auto;
 }
+div#point{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: solid 3px #DC143C;
+    border-radius: 10px;
+}
+div#point h3{
+    font-size: 25px;
+    border-bottom: solid 2px orange;
+}
+div#point p{
+    padding-left: 20px;
+}

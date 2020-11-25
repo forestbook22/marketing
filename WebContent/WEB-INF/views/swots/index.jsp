@@ -19,14 +19,10 @@
                 </tr>
                 <c:forEach var="swot" items="${swots}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <c:choose>
-                             <c:when test="${swot.delete_flag == 0 && swot.show_flag == 0}">
-                                 <td class="swot_name"><c:out value="${swot.user.name}" /></td>
-                                 <td class="swot_date"><fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' /></td>
-                                 <td class="swot_title">${swot.title}</td>
-                                 <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
-                             </c:when>
-                         </c:choose>
+                        <td class="swot_name"><c:out value="${swot.user.name}" /></td>
+                        <td class="swot_date"><fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' /></td>
+                        <td class="swot_title">${swot.title}</td>
+                        <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

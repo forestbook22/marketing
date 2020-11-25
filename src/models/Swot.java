@@ -19,11 +19,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllSwots",
-            query = "SELECT s FROM Swot AS s ORDER BY s.id DESC"
+            query = "SELECT s FROM Swot AS s WHERE s.delete_flag = 0 AND s.show_flag = 0 ORDER BY s.id DESC"
             ),
     @NamedQuery(
             name = "getSwotsCount",
-            query = "SELECT COUNT(s) FROM Swot AS s"
+            query = "SELECT COUNT(s) FROM Swot AS s WHERE s.delete_flag = 0 AND s.show_flag = 0"
             ),
     @NamedQuery(
             name = "getMyAllSwots",
@@ -31,7 +31,7 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getMySwotsCount",
-            query = "SELECT COUNT(s) FROM Swot AS s WHERE s.user = :user"
+            query = "SELECT COUNT(s) FROM Swot AS s WHERE s.user = :user "
             )
 })
 @Entity

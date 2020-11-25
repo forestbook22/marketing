@@ -74,9 +74,9 @@
                          ctx.fillText("Competitor", 600, 300);
                          ctx.fill();
                          ctx.beginPath();
-                         ctx.fillText("${threec.cus}", 440, 145, 350);
-                         ctx.fillText("${threec.own}", 265, 375, 350);
-                         ctx.fillText("${threec.compe}", 600, 375, 350);
+                         ctx.fillText("${threec.cus}", (1000 - ctx.measureText("${threec.cus}").width) / 2, 145, 350);
+                         ctx.fillText("${threec.own}", (650 - ctx.measureText("${threec.own}").width) / 2, 375, 350);
+                         ctx.fillText("${threec.compe}", (1350 - ctx.measureText("${threec.compe}").width) / 2, 375, 350);
                          ctx.fill();
                          }
                    </script>

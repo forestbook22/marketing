@@ -86,13 +86,13 @@
                           //Text
                           ctx.fillStyle = 'white';
                           ctx.fillText("Strength(強み)", 125, 140);
-                          ctx.fillText("${swot.strong}", 140, 205, 350);
+                          ctx.fillText("${swot.strong}",  (600 - ctx.measureText("${swot.strong}").width) / 2, 205, 400,150);
                           ctx.fillText("Weakness(弱み)", 525, 140);
-                          ctx.fillText("${swot.weak}", 560, 205, 350);
+                          ctx.fillText("${swot.weak}", (1400 - ctx.measureText("${swot.weak}").width) / 2, 205,  400,150);
                           ctx.fillText("Opportunity(機会)", 125, 290);
-                          ctx.fillText("${swot.opp}", 140, 375, 350);
+                          ctx.fillText("${swot.opp}", (600 - ctx.measureText("${swot.opp}").width) / 2, 375,  400,150);
                           ctx.fillText("Thread(脅威)", 525, 290);
-                          ctx.fillText("${swot.thre}" ,560, 375, 350);
+                          ctx.fillText("${swot.thre}" ,(1400 - ctx.measureText("${swot.thre}").width) / 2, 375,  400,150);
 
                           ctx.stroke();
                           }

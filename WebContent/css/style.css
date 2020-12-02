@@ -234,8 +234,10 @@ div#point{
     border-radius: 10px;
 }
 div#point h3{
-    font-size: 25px;
-    border-bottom: solid 2px orange;
+    font-size: 20px;
+}
+span#double{
+    border-bottom: double 3px crimson;
 }
 div#point p{
     padding-left: 20px;

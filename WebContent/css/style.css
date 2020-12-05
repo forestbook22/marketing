@@ -5,6 +5,96 @@ body {
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
 }
 
+fieldset{
+  width:500px;
+  margin:0 auto;
+  margin-top:8px;
+  margin-bottom:2%;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+
+}
+h1#login{
+  display:block;
+  background:#808080;
+  padding:20px 0; /*PADDING TODOS OS LADOS DE 20PX*/
+  font-size:140%;
+  font-weight:300;
+  text-align:center;
+  color:#fff;
+}
+form#login{
+  background:#f0f0f0;
+  padding:6% 4%;
+}
+input#login[type="password"]{
+  width:76%;
+  height:20px;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  padding:4% 4% 4% 4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color:#555;
+}
+.iconPassword{
+  width:20px;
+  height:20px;
+  background-color:#808080;
+  float:left;
+  padding:4% 4% 4% 4%;
+  margin-bottom:4%;
+  background-repeat:no-repeat;
+   background-image:url(https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f09c-32.png);
+  background-position:center;
+  border:1px solid #ccc;
+}
+.iconUser{
+  width:20px;
+  height:20px;
+  background-color:#808080;
+  float:left;
+  padding:4% 4% 4% 4%;
+  margin-bottom:4%;
+  background-repeat:no-repeat;
+   background-image:url(https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f007-32.png);
+  background-position:center;
+  border:1px solid #ccc;
+}
+input#login[type="text"]{
+  width:76%;
+  height:20px;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  padding:4% 4% 4% 4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color:#555;
+}
+button#login[type="submit"]{
+  width:100%;
+  background:#808080;
+  border:0;
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:100%;
+  color:#fff;
+  cursor:pointer;
+  transition:background .3s;
+  -webkit-transition:background .3s;
+}
+h3#new{
+    text-align:center;
+    padding-top:20px;
+}
+
+button#login[type="submit"]:hover{
+  background:#c0c0c0;
+}
+::-webkit-input-placeholder {
+
+}
+
 #header {
     width: 100%;
     height: 70px;
@@ -97,12 +187,7 @@ table#user_list td {
     padding: 10px 2%;
 }
 
-tr.row1 {
-        background-color: #f2f2f2;
-}
-tr.row0 {
-        background-color: #ffffff;
-}
+
 select{
     height: 30px;
 }
@@ -129,8 +214,10 @@ h1 a {
     color: #eeeeee;
 }
 table#fourp_list th {
+    background-color:grey;
     font-weight: bold;
     padding: 10px 2%;
+    color:white
 }
 
 table#fourp_list .fourp_name {
@@ -150,8 +237,10 @@ table#fourp_list .fourp_action {
 }
 
 table#swot_list th {
+    background-color:grey;
     font-weight: bold;
     padding: 10px 2%;
+    color:white
 }
 
 table#swot_list .swot_name {
@@ -175,8 +264,10 @@ table#swot_list .swot_action {
 }
 
 table#threec_list th {
+    background-color:grey;
     font-weight: bold;
     padding: 10px 2%;
+    color:white
 }
 
 table#threec_list .threec_name {
@@ -200,8 +291,10 @@ table#threec_list .threec_action {
 }
 
 table#strategy_list th {
+    background-color:grey;
     font-weight: bold;
     padding: 10px 2%;
+    color:white
 }
 
 table#strategy_list .strategy_name {

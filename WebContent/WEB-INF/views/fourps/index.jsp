@@ -8,21 +8,21 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>4P　一覧</h2>
+        <h2>4P</h2>
         <table id="fourp_list">
             <tbody>
                 <tr>
-                    <th class="fourp_name">氏名</th>
-                    <th class="fourp_date">日付</th>
-                    <th class="fourp_title">タイトル</th>
-                    <th class="fourp_action">操作</th>
+                    <th class="fourp_name">Name</th>
+                    <th class="fourp_date">Date</th>
+                    <th class="fourp_title">Title</th>
+                    <th class="fourp_action">Action</th>
                 </tr>
                 <c:forEach var="fourp" items="${fourps}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td class="fourp_name"><c:out value="${fourp.user.name}" /></td>
                         <td class="fourp_date"><fmt:formatDate value='${fourp.fourp_date}' pattern='yyyy-MM-dd' /></td>
                         <td class="fourp_title">${fourp.title}</td>
-                        <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">詳細を表示</a></td>
+                        <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">Detail</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

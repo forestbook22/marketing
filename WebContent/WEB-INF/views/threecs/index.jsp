@@ -8,21 +8,21 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>3C分析　一覧</h2>
+        <h2>3C</h2>
         <table id="threec_list">
             <tbody>
                 <tr>
-                    <th class="threec_name">氏名</th>
-                    <th class="threec_date">日付</th>
-                    <th class="threec_title">タイトル</th>
-                    <th class="threec_action">操作</th>
+                    <th class="threec_name">Name</th>
+                    <th class="threec_date">Date</th>
+                    <th class="threec_title">Title</th>
+                    <th class="threec_action">Action</th>
                 </tr>
                 <c:forEach var="threec" items="${threecs}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td class="threec_name"><c:out value="${threec.user.name}" /></td>
                         <td class="threec_date"><fmt:formatDate value='${threec.threec_date}' pattern='yyyy-MM-dd' /></td>
                         <td class="threec_title">${threec.title}</td>
-                        <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">詳細を表示</a></td>
+                        <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">Detail</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

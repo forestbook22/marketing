@@ -8,21 +8,21 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>SWOT　一覧</h2>
+        <h2>SWOT</h2>
         <table id="swot_list">
             <tbody>
                 <tr>
-                    <th class="swot_name">氏名</th>
-                    <th class="swot_date">日付</th>
-                    <th class="swot_title">タイトル</th>
-                    <th class="swot_action">操作</th>
+                    <th class="swot_name">Name</th>
+                    <th class="swot_date">Date</th>
+                    <th class="swot_title">Title</th>
+                    <th class="swot_action">Action</th>
                 </tr>
                 <c:forEach var="swot" items="${swots}" varStatus="status">
                     <tr class="row${status.count % 2}">
                         <td class="swot_name"><c:out value="${swot.user.name}" /></td>
                         <td class="swot_date"><fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' /></td>
                         <td class="swot_title">${swot.title}</td>
-                        <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
+                        <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">Detail</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

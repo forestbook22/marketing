@@ -12,10 +12,10 @@
         <div id="wrapper">
             <div id="header">
                 <div id="header_menu">
-                    <h1><a href="<c:url value='/' />">マーケティングチェッカ―</a></h1>&nbsp;&nbsp;&nbsp;
+                    <h1><a href="<c:url value='/' />">Marketing Checker</a></h1>&nbsp;&nbsp;&nbsp;
                     <c:if test="${sessionScope.login_user != null}">
                         <c:if test="${sessionScope.login_user.admin_flag == 1}">
-                            <a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
+                            <a href="<c:url value='/users/index' />">User</a>&nbsp;
                         </c:if>
                         <a href="<c:url value='/fourps/index' />">4P</a>&nbsp;
                         <a href="<c:url value='/swots/index' />">SWOT</a>&nbsp;
@@ -25,7 +25,7 @@
                 <c:if test="${sessionScope.login_user != null}">
                     <div id="user_name">
                         <c:out value="${sessionScope.login_user.name}" />&nbsp;さん&nbsp;&nbsp;&nbsp;
-                        <a href="<c:url value='/logout' />">ログアウト</a>
+                        <a href="<c:url value='/logout' />">Logout</a>
                     </div>
                 </c:if>
             </div>

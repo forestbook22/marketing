@@ -10,25 +10,25 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th>氏名</th>
+                            <th>Name</th>
                             <td><c:out value="${threec.user.name}" /></td>
                         </tr>
                         <tr>
-                            <th>日付</th>
+                            <th>Date</th>
                             <td><fmt:formatDate value="${threec.threec_date}" pattern="yyyy-MM-dd" /></td>
                         </tr>
                         <tr>
-                            <th>タイトル</th>
+                            <th>Title</th>
                             <td><c:out value="${threec.title}" /></td>
                         </tr>
                         <tr>
-                            <th>登録日時</th>
+                            <th>Created_at</th>
                             <td>
                                 <fmt:formatDate value="${threec.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
                         </tr>
                         <tr>
-                            <th>更新日時</th>
+                            <th>Updated_at</th>
                             <td>
                                 <fmt:formatDate value="${threec.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>

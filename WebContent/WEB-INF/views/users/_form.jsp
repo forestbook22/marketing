@@ -10,16 +10,14 @@
     </div>
 </c:if>
 
-<label for="name">氏名</label><br />
-<input type="text" name="name" value="${user.name}" />
-<br /><br />
+ <div class="iconUser"></div>
+ <label for="name"></label>
+ <input id="login" type="text" placeholder="Username" required name="name" value="${name}" />
 
-<label for="password">パスワード</label><br />
-<input type="password" name="password" />
-<br /><br />
-
-<label for="admin_flag"></label><br />
-<input type="hidden" name="admin_flag" value=0 />
-
-<input type="hidden" name="_token" value="${_token}" />
-<button type="submit">登録</button>
+ <div class="iconPassword"></div>
+ <label for="password"></label>
+ <input id="login" type="password" placeholder="Password" required name="password" />
+ <label for="admin_flag"></label><input type="hidden" name="admin_flag" value=0 />
+ <input type="hidden" name="_token" value="${_token}" />
+ <button id="login" type="submit">Create</button>
+ <h3 id="new"><a href="<c:url value='/login' />">Go Back to Login page</a></h3>

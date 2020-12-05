@@ -8,16 +8,16 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>マーケティングチェッカ―へようこそ</h2>
-        <h3>【自分の戦略一覧】</h3>
+        <h2>Welcome to Marketing Checker</h2>
+        <h3>【Your Strategy】</h3>
         <table id="strategy_list">
             <tbody>
                 <tr>
-                    <th class="strategy_name">氏名</th>
-                    <th class="strategy_date">日付</th>
-                    <th class="strategy_frame">フレームワーク</th>
-                    <th class="strategy_title">タイトル</th>
-                    <th class="strategy_action">操作</th>
+                    <th class="strategy_name">Name</th>
+                    <th class="strategy_date">Date</th>
+                    <th class="strategy_frame">Framework</th>
+                    <th class="strategy_title">Title</th>
+                    <th class="strategy_action">Action</th>
                 </tr>
                 <c:forEach var="fourp" items="${fourps}" varStatus="status">
                     <tr class="row${status.count % 2}">
@@ -27,7 +27,7 @@
                                  <td class="fourp_date"><fmt:formatDate value='${fourp.fourp_date}' pattern='yyyy-MM-dd' /></td>
                                  <td class="fourp_frame">${fourp.frame}</td>
                                  <td class="fourp_title">${fourp.title}</td>
-                                 <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">詳細を表示</a></td>
+                                 <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">Detail</a></td>
                              </c:when>
                        </c:choose>
                     </tr>
@@ -40,7 +40,7 @@
                                  <td class="swot_date"><fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' /></td>
                                  <td class="swot_frame">${swot.frame}</td>
                                  <td class="swot_title">${swot.title}</td>
-                                 <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
+                                 <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">Detail</a></td>
                              </c:when>
                          </c:choose>
                     </tr>
@@ -53,7 +53,7 @@
                                  <td class="threec_date"><fmt:formatDate value='${threec.threec_date}' pattern='yyyy-MM-dd' /></td>
                                  <td class="threec_frame">${threec.frame}</td>
                                  <td class="threec_title">${threec.title}</td>
-                                 <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">詳細を表示</a></td>
+                                 <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">Detail</a></td>
                              </c:when>
                          </c:choose>
                     </tr>

@@ -56,12 +56,11 @@ public class TopPageIndexServlet extends HttpServlet {
                                 .setFirstResult(15 * (page - 1))
                                 .setMaxResults(15)
                                 .getResultList();
-
         List<Threec> threecs = em.createNamedQuery("getMyAllThreecs", Threec.class)
-                .setParameter("user", login_user)
-                .setFirstResult(15 * (page - 1))
-                .setMaxResults(15)
-                .getResultList();
+                                .setParameter("user", login_user)
+                                .setFirstResult(15 * (page - 1))
+                                .setMaxResults(15)
+                                .getResultList();
 
         long fourps_count = (long)em.createNamedQuery("getMyFourpsCount", Long.class)
                                 .setParameter("user", login_user)

@@ -8,12 +8,12 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>ユーザー　一覧</h2>
+        <h2>User　一覧</h2>
         <table id="user_list">
             <tbody>
                 <tr>
-                    <th>ユーザーネーム</th>
-                    <th>操作</th>
+                    <th>User Name</th>
+                    <th>Action</th>
                 </tr>
                 <c:forEach var="user" items="${users}" varStatus="status">
                     <tr class="row${status.count % 2}">
@@ -24,7 +24,7 @@
                                     （削除済み）
                                 </c:when>
                                 <c:otherwise>
-                                    <a href="<c:url value='/users/show?id=${user.id}' />">詳細を表示</a>
+                                    <a href="<c:url value='/users/show?id=${user.id}' />">Detail</a>
                                 </c:otherwise>
                             </c:choose>
                         </td>

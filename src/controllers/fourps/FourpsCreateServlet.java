@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Fourp;
+import models.Title;
 import models.User;
 import models.validators.FourpValidator;
 import utils.DBUtil;
@@ -44,6 +45,7 @@ public class FourpsCreateServlet extends HttpServlet {
             Fourp f = new Fourp();
 
             f.setUser((User)request.getSession().getAttribute("login_user"));
+            f.setTitle((Title)request.getSession().getAttribute("users_title"));
 
             Date fourp_date = new Date(System.currentTimeMillis());
             String rd_str = request.getParameter("fourp_date");
@@ -52,7 +54,6 @@ public class FourpsCreateServlet extends HttpServlet {
             }
             f.setFourp_date(fourp_date);
             f.setFrame(request.getParameter("frame"));
-            f.setTitle(request.getParameter("title"));
             f.setProduct(request.getParameter("product"));
             f.setPrice(request.getParameter("price"));
             f.setPlace(request.getParameter("place"));
@@ -81,7 +82,7 @@ public class FourpsCreateServlet extends HttpServlet {
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
 
-                response.sendRedirect(request.getContextPath() + "/fourps/index");
+                response.sendRedirect(request.getContextPath() + "/");
             }
         }
     }

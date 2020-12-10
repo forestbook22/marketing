@@ -1,4 +1,4 @@
-package controllers.select;
+package controllers.titles;
 
 import java.io.IOException;
 
@@ -9,17 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Title;
+
 /**
- * Servlet implementation class SelectServlet
+ * Servlet implementation class TitlesNewServlet
  */
-@WebServlet("/select")
-public class SelectServlet extends HttpServlet {
+@WebServlet("/titles/new")
+public class TitlesNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SelectServlet() {
+    public TitlesNewServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,7 +30,12 @@ public class SelectServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/views/select/select.jsp");
+        request.setAttribute("_token", request.getSession().getId());
+
+        Title ti = new Title();
+        request.setAttribute("title", ti);
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/titles/new.jsp");
         rd.forward(request, response);
     }
 }

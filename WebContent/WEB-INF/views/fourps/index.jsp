@@ -21,8 +21,8 @@
                     <tr class="row${status.count % 2}">
                         <td class="fourp_name"><c:out value="${fourp.user.name}" /></td>
                         <td class="fourp_date"><fmt:formatDate value='${fourp.fourp_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="fourp_title">${fourp.title}</td>
-                        <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">Detail</a></td>
+                        <td class="fourp_title">${fourp.title.title}</td>
+                        <td class="fourp_action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">詳細を表示</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
@@ -41,7 +41,5 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/fourps/new' />">新規4Pの登録</a></p>
-
     </c:param>
 </c:import>

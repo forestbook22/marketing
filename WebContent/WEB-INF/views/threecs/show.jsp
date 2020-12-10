@@ -19,7 +19,7 @@
                         </tr>
                         <tr>
                             <th>Title</th>
-                            <td><c:out value="${threec.title}" /></td>
+                            <td><c:out value="${threec.title.title}" /></td>
                         </tr>
                         <tr>
                             <th>Created_at</th>
@@ -38,16 +38,6 @@
                 <br>
                 <div id="canvas_wrapper">
                    <canvas id="board" width="1000" height="500"></canvas>
-                </div>
-                <div id="point">
-                <h2>活用法</h2>
-                    <h3><span id = "double">自社が優位になる戦略的な計画を作り出すこと</span></h3>
-                    <p>顧客ニーズを見極め、競争の激しいレッドオーシャンを戦略的に避け、自社の強みを活かし成長していくことが可能</p>
-                    <h3><span id = "double">他社分析</span></h3>
-                    <p>競合企業を分析し、彼らのコアの強み、マーケティング戦略、販売網、企業文化などから自社が優位になる戦略的な計画を作り出すこと</p>
-                    <h3><span id = "double">消費者と自社を知る</span></h3>
-                    <p>競合・消費者・自社の理解を通じて、成長を支える自社オリジナルの戦術を見つけることができる</p>
-                    <p>上記のように4つをクロスして検討していき、より具体的な戦略に落とし込みます</p>
                 </div>
                    <script>
                    window.onload=()=>{
@@ -91,6 +81,16 @@
                          }
                    </script>
                 <c:if test="${sessionScope.login_user.id == threec.user.id}">
+                    <div id="point">
+                        <h2>活用法</h2>
+                            <h3><span id = "double">自社が優位になる戦略的な計画を作り出すこと</span></h3>
+                            <p>顧客ニーズを見極め、競争の激しいレッドオーシャンを戦略的に避け、自社の強みを活かし成長していくことが可能</p>
+                            <h3><span id = "double">他社分析</span></h3>
+                            <p>競合企業を分析し、彼らのコアの強み、マーケティング戦略、販売網、企業文化などから自社が優位になる戦略的な計画を作り出すこと</p>
+                            <h3><span id = "double">消費者と自社を知る</span></h3>
+                            <p>競合・消費者・自社の理解を通じて、成長を支える自社オリジナルの戦術を見つけることができる</p>
+                            <p>上記のように4つをクロスして検討していき、より具体的な戦略に落とし込みます</p>
+                    </div>
                     <p><a href="<c:url value="/threecs/edit?id=${threec.id}" />">このフレームワークを編集する</a></p>
                 </c:if>
             </c:when>

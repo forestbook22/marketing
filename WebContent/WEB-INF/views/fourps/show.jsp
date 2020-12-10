@@ -7,7 +7,7 @@
             <c:when test="${fourp != null}">
                 <h2>4P　詳細ページ</h2>
 
-                <table>
+                <table id = "show">
                     <tbody>
                         <tr>
                             <th>Name</th>
@@ -19,7 +19,7 @@
                         </tr>
                         <tr>
                             <th>Title</th>
-                            <td><c:out value="${fourp.title}" /></td>
+                            <td><c:out value="${fourp.title.title}" /></td>
                         </tr>
                         <tr>
                             <th>Created_at</th>
@@ -38,19 +38,6 @@
                 <br>
                 <div id="canvas_wrapper">
                    <canvas id="board" width="1000" height="500"></canvas>
-                </div>
-                <div id="point">
-                <h2>活用法</h2>
-                    <h3><span id = "double">戦略に大きなズレがないか確認</span></h3>
-                    <p>製品・価格・流通・販売促進それぞれがターゲットのニーズに合致し、
-                    価値を感じる製品やサービスを提供するために最適かの「整合性」を確認！</p>
-                    <h3><span id = "double">4Pをミックスし、今後の施策を考える</span></h3>
-                    <p>複数のPをかけ合わせることで、自社に適した戦略をとることができる</p>
-                    <p>ex)飲食物で、品質が良く（Product）、価格もやや高めだが（Price）、コンビニやスーパーで購入できる（Place）
-                    ＝日常の贅沢を感じさせる商品としてのプロモーションへ</p>
-                    <h3><span id = "double">3Cと組み合わせる</span></h3>
-                    <p>4Pが主に自社の戦略を分析するのに対し、3C分析では市場・顧客や競合企業の分析など外部環境について分析する。
-                    そこで、4P分析と3C分析を組み合わせることで、自社の戦略をより精度の高いものにすることができる！</p>
                 </div>
                 <script>
                    window.onload=()=>{
@@ -125,6 +112,19 @@
                     }
                    </script>
                 <c:if test="${sessionScope.login_user.id == fourp.user.id}">
+                    <div id="point">
+                    <h2>活用法</h2>
+                        <h3><span id = "double">戦略に大きなズレがないか確認</span></h3>
+                        <p>製品・価格・流通・販売促進それぞれがターゲットのニーズに合致し、
+                        価値を感じる製品やサービスを提供するために最適かの「整合性」を確認！</p>
+                        <h3><span id = "double">4Pをミックスし、今後の施策を考える</span></h3>
+                        <p>複数のPをかけ合わせることで、自社に適した戦略をとることができる</p>
+                        <p>ex)飲食物で、品質が良く（Product）、価格もやや高めだが（Price）、コンビニやスーパーで購入できる（Place）
+                        ＝日常の贅沢を感じさせる商品としてのプロモーションへ</p>
+                        <h3><span id = "double">3Cと組み合わせる</span></h3>
+                        <p>4Pが主に自社の戦略を分析するのに対し、3C分析では市場・顧客や競合企業の分析など外部環境について分析する。
+                        そこで、4P分析と3C分析を組み合わせることで、自社の戦略をより精度の高いものにすることができる！</p>
+                    </div>
                     <p><a href="<c:url value="/fourps/edit?id=${fourp.id}" />">このフレームワークを編集する</a></p>
                 </c:if>
             </c:when>

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Swot;
+import models.Title;
 import models.User;
 import models.validators.SwotValidator;
 import utils.DBUtil;
@@ -44,6 +45,7 @@ public class SwotsCreateServlet extends HttpServlet {
             Swot s = new Swot();
 
             s.setUser((User)request.getSession().getAttribute("login_user"));
+            s.setTitle((Title)request.getSession().getAttribute("users_title"));
 
             Date swot_date = new Date(System.currentTimeMillis());
             String rd_str = request.getParameter("swot_date");
@@ -52,7 +54,6 @@ public class SwotsCreateServlet extends HttpServlet {
             }
             s.setSwot_date(swot_date);
             s.setFrame(request.getParameter("frame"));
-            s.setTitle(request.getParameter("title"));
             s.setStrong(request.getParameter("strong"));
             s.setWeak(request.getParameter("weak"));
             s.setOpp(request.getParameter("opp"));
@@ -81,7 +82,7 @@ public class SwotsCreateServlet extends HttpServlet {
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
 
-                response.sendRedirect(request.getContextPath() + "/swots/index");
+                response.sendRedirect(request.getContextPath() + "/");
             }
         }
     }

@@ -9,11 +9,6 @@ public class SwotValidator {
     public static List<String> validate(Swot s) {
         List<String> errors = new ArrayList<String>();
 
-        String title_error = _validateTitle(s.getTitle());
-        if(!title_error.equals("")) {
-            errors.add(title_error);
-        }
-
         String strong_error = _validateStrong(s.getStrong());
         if(!strong_error.equals("")) {
             errors.add(strong_error);
@@ -34,14 +29,6 @@ public class SwotValidator {
             errors.add(thre_error);
         }
         return errors;
-    }
-
-    private static String _validateTitle(String title) {
-        if(title == null || title.equals("")) {
-            return "タイトルを入力してください。";
-            }
-
-        return "";
     }
 
     private static String _validateStrong(String strong) {

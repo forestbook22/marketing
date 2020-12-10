@@ -43,7 +43,6 @@ public class FourpsUpdateServlet extends HttpServlet {
 
             f.setFourp_date(Date.valueOf(request.getParameter("fourp_date")));
             f.setFrame(request.getParameter("frame"));
-            f.setTitle(request.getParameter("title"));
             f.setProduct(request.getParameter("product"));
             f.setPrice(request.getParameter("price"));
             f.setPlace(request.getParameter("place"));

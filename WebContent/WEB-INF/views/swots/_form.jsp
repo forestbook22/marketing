@@ -22,7 +22,7 @@
 <input type="hidden" name="frame" value="SWOT" />
 
 <label for="title">タイトル</label><br />
-<input type="text" name="title" value="${swot.title}" />
+<c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
 <label for="strong">Strength:　目標達成にプラスとなる企業内部の特質は？</label><br />

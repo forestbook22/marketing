@@ -22,7 +22,7 @@
 <input type="hidden" name="frame" value="4P" />
 
 <label for="title">タイトル</label><br />
-<input type="text" name="title" value="${fourp.title}" />
+<c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
 <label for="product">Product:　企業の利益の源泉となる商品（品質・デザイン・ブランド名）は？</label><br />

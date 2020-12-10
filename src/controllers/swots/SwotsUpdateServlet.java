@@ -44,7 +44,6 @@ public class SwotsUpdateServlet extends HttpServlet {
 
             s.setSwot_date(Date.valueOf(request.getParameter("swot_date")));
             s.setFrame(request.getParameter("frame"));
-            s.setTitle(request.getParameter("title"));
             s.setStrong(request.getParameter("strong"));
             s.setWeak(request.getParameter("weak"));
             s.setOpp(request.getParameter("opp"));

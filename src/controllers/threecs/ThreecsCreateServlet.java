@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Threec;
+import models.Title;
 import models.User;
 import models.validators.ThreecValidator;
 import utils.DBUtil;
@@ -44,6 +45,7 @@ public class ThreecsCreateServlet extends HttpServlet {
             Threec t = new Threec();
 
             t.setUser((User)request.getSession().getAttribute("login_user"));
+            t.setTitle((Title)request.getSession().getAttribute("users_title"));
 
             Date threec_date = new Date(System.currentTimeMillis());
             String rd_str = request.getParameter("threec_date");
@@ -52,7 +54,6 @@ public class ThreecsCreateServlet extends HttpServlet {
             }
             t.setThreec_date(threec_date);
             t.setFrame(request.getParameter("frame"));
-            t.setTitle(request.getParameter("title"));
             t.setCus(request.getParameter("cus"));
             t.setOwn(request.getParameter("own"));
             t.setCompe(request.getParameter("compe"));
@@ -80,7 +81,7 @@ public class ThreecsCreateServlet extends HttpServlet {
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
 
-                response.sendRedirect(request.getContextPath() + "/threecs/index");
+                response.sendRedirect(request.getContextPath() + "/");
             }
     }
     }

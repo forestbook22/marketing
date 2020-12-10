@@ -21,8 +21,8 @@
                     <tr class="row${status.count % 2}">
                         <td class="swot_name"><c:out value="${swot.user.name}" /></td>
                         <td class="swot_date"><fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="swot_title">${swot.title}</td>
-                        <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">Detail</a></td>
+                        <td class="swot_title">${swot.title.title}</td>
+                        <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
@@ -41,7 +41,5 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/swots/new' />">新規SWOTの登録</a></p>
-
     </c:param>
 </c:import>

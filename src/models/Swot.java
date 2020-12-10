@@ -27,7 +27,7 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getMyAllSwots",
-            query = "SELECT s FROM Swot AS s WHERE s.user = :user ORDER BY s.id DESC"
+            query = "SELECT s FROM Swot AS s WHERE s.user = :user AND s.title = :title"
             ),
     @NamedQuery(
             name = "getMySwotsCount",
@@ -51,8 +51,9 @@ public class Swot {
     @Column(name = "frame", nullable = false)
     private String frame;
 
-    @Column(name = "title", length = 255, nullable = false)
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "title_id", nullable = false)
+    private Title title;
 
     @Lob
     @Column(name = "strong", nullable = false)
@@ -114,11 +115,11 @@ public class Swot {
         this.frame = frame;
     }
 
-    public String getTitle() {
+    public Title getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(Title title) {
         this.title = title;
     }
 

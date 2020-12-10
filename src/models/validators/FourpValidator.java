@@ -9,11 +9,6 @@ public class FourpValidator {
     public static List<String> validate(Fourp f) {
         List<String> errors = new ArrayList<String>();
 
-        String title_error = _validateTitle(f.getTitle());
-        if(!title_error.equals("")) {
-            errors.add(title_error);
-        }
-
         String product_error = _validateProduct(f.getProduct());
         if(!product_error.equals("")) {
             errors.add(product_error);
@@ -34,14 +29,6 @@ public class FourpValidator {
             errors.add(promotion_error);
         }
         return errors;
-    }
-
-    private static String _validateTitle(String title) {
-        if(title == null || title.equals("")) {
-            return "タイトルを入力してください。";
-            }
-
-        return "";
     }
 
     private static String _validateProduct(String product) {

@@ -21,8 +21,8 @@
                     <tr class="row${status.count % 2}">
                         <td class="threec_name"><c:out value="${threec.user.name}" /></td>
                         <td class="threec_date"><fmt:formatDate value='${threec.threec_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="threec_title">${threec.title}</td>
-                        <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">Detail</a></td>
+                        <td class="threec_title">${threec.title.title}</td>
+                        <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">詳細を表示</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
@@ -41,7 +41,5 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/threecs/new' />">新規3Cの登録</a></p>
-
     </c:param>
 </c:import>

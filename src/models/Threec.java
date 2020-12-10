@@ -27,11 +27,11 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getMyAllThreecs",
-            query = "SELECT t FROM Threec AS t WHERE t.user = :user ORDER BY t.id DESC"
+            query = "SELECT t FROM Threec AS t WHERE t.user = :user AND t.title = :title"
             ),
     @NamedQuery(
             name = "getMyThreecsCount",
-            query = "SELECT COUNT(t) FROM Threec AS t WHERE t.user = :user"
+            query = "SELECT COUNT(t) FROM Threec AS t WHERE t.user = :user AND t.title = :title"
             )
 })
 @Entity
@@ -51,8 +51,9 @@ public class Threec {
     @Column(name = "frame", nullable = false)
     private String frame;
 
-    @Column(name = "title", length = 255, nullable = false)
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "title_id", nullable = false)
+    private Title title;
 
     @Lob
     @Column(name = "cus", nullable = false)
@@ -112,11 +113,11 @@ public class Threec {
         this.threec_date = threec_date;
     }
 
-    public String getTitle() {
+    public Title getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(Title title) {
         this.title = title;
     }
 

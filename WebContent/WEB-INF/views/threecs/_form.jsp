@@ -22,7 +22,7 @@
 <input type="hidden" name="frame" value="3C" />
 
 <label for="title">タイトル</label><br />
-<input type="text" name="title" value="${threec.title}" />
+<c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
 <label for="cus">Customer:　顧客の性別・年齢・価値観・特徴は？</label><br />

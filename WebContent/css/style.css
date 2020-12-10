@@ -115,6 +115,8 @@ h1 {
 h2 {
     font-size: 36px;
     margin-bottom: 15px;
+    font-weight: bold;
+    padding-left: 10px;
 }
 
 li {
@@ -133,24 +135,46 @@ a {
 }
 
 table, tr, th, td {
-    border: 1px solid #cccccc;
+    padding: 10px 0;
+    border: 1px solid silver;
 }
 
 table {
-    width: 100%;
-    table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 5px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 th {
-    width: 26%;
-    padding: 10px 2%;
+  padding: 15px 0;
+  font-size: 14px;
+  text-align: center;
 }
-
+tr{
+  text-align: center;
+  padding: 20px 0;
+  background-color: #fff;
+}
 td {
     width: 66%;
     padding: 10px 2%;
 }
+tbody:hover td,tbody:hover th {
+  color: transparent;
+  text-shadow: 0 0 3px #aaa;
+  background:#eee
+}
 
+tbody:hover tr:hover td,
+tbody:hover tr:hover th{
+  color: #444;
+  text-shadow: 0 1px 0 #fff;
+  background:#fff
+}
 button {
     font-size: 14px;
     padding: 5px 10px;
@@ -177,16 +201,6 @@ button {
     color: #721c24;
     background-color: #f8d7da;
 }
-table#user_list th {
-    width: 30%;
-    padding: 10px 2%;
-}
-
-table#user_list td {
-    width: 29%;
-    padding: 10px 2%;
-}
-
 
 select{
     height: 30px;
@@ -213,6 +227,10 @@ select{
 h1 a {
     color: #eeeeee;
 }
+body {
+  width: 100%;
+}
+
 table#fourp_list th {
     background-color:grey;
     font-weight: bold;
@@ -289,33 +307,33 @@ table#threec_list .threec_title {
 table#threec_list .threec_action {
     width: 13%;
 }
-
-table#strategy_list th {
+table#title_list th {
     background-color:grey;
     font-weight: bold;
     padding: 10px 2%;
     color:white
 }
 
-table#strategy_list .strategy_name {
-    width: 15%;
+table#title_list .title_title {
+    width: 50%;
+}
+
+table#title_list .title_action {
+    width: 50%;
+}
+
+table#user_list th {
+    background-color:grey;
+    font-weight: bold;
+    padding: 10px 2%;
+    color:white
+}
+
+table#user_list td {
+    width: 29%;
     padding: 10px 2%;
 }
-table#strategy_list .strategy_date {
-    width: 15%;
-}
 
-table#strategy_list .strategy_frame {
-    width: 20%;
-}
-
-table#strategy_list .strategy_title {
-    width: 27%;
-}
-
-table#strategy_list .strategy_action {
-    width: 13%;
-}
 div#canvas_wrapper {
     width: 80%;
     margin: 0 auto;

@@ -27,11 +27,11 @@ import javax.persistence.Table;
             ),
     @NamedQuery(
             name = "getMyAllFourps",
-            query = "SELECT f FROM Fourp AS f WHERE f.user = :user ORDER BY f.id DESC"
+            query = "SELECT f FROM Fourp AS f WHERE f.user = :user AND f.title = :title"
             ),
     @NamedQuery(
             name = "getMyFourpsCount",
-            query = "SELECT COUNT(f) FROM Fourp AS f WHERE f.user = :user"
+            query = "SELECT COUNT(f) FROM Fourp AS f WHERE f.user = :user AND f.title = :title"
             )
 })
 @Entity
@@ -51,8 +51,9 @@ public class Fourp {
     @Column(name = "frame", nullable = false)
     private String frame;
 
-    @Column(name = "title", length = 255, nullable = false)
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "title_id", nullable = false)
+    private Title title;
 
     @Lob
     @Column(name = "product", nullable = false)
@@ -116,11 +117,11 @@ public class Fourp {
         this.fourp_date = fourp_date;
     }
 
-    public String getTitle() {
+    public Title getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(Title title) {
         this.title = title;
     }
 

@@ -9,11 +9,6 @@ public class ThreecValidator {
     public static List<String> validate(Threec s) {
         List<String> errors = new ArrayList<String>();
 
-        String title_error = _validateTitle(s.getTitle());
-        if(!title_error.equals("")) {
-            errors.add(title_error);
-        }
-
         String cus_error = _validateCus(s.getCus());
         if(!cus_error.equals("")) {
             errors.add(cus_error);
@@ -29,14 +24,6 @@ public class ThreecValidator {
             errors.add(compe_error);
         }
         return errors;
-    }
-
-    private static String _validateTitle(String title) {
-        if(title == null || title.equals("")) {
-            return "タイトルを入力してください。";
-            }
-
-        return "";
     }
 
     private static String _validateCus(String cus) {

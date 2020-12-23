@@ -34,7 +34,7 @@ public class ThreecsNewServlet extends HttpServlet {
         request.setAttribute("_token", request.getSession().getId());
 
         Threec t = new Threec();
-        t.setThreec_date(new Date(System.currentTimeMillis()));
+        t.setDate(new Date(System.currentTimeMillis()));
         request.setAttribute("threec", t);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/threecs/new.jsp");

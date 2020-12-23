@@ -15,7 +15,7 @@
                         </tr>
                         <tr>
                             <th>Date</th>
-                            <td><fmt:formatDate value="${swot.swot_date}" pattern="yyyy-MM-dd" /></td>
+                            <td><fmt:formatDate value="${swot.date}" pattern="yyyy-MM-dd" /></td>
                         </tr>
                         <tr>
                             <th>Title</th>

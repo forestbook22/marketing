@@ -47,12 +47,12 @@ public class SwotsCreateServlet extends HttpServlet {
             s.setUser((User)request.getSession().getAttribute("login_user"));
             s.setTitle((Title)request.getSession().getAttribute("users_title"));
 
-            Date swot_date = new Date(System.currentTimeMillis());
-            String rd_str = request.getParameter("swot_date");
+            Date date = new Date(System.currentTimeMillis());
+            String rd_str = request.getParameter("date");
             if(rd_str != null && !rd_str.equals("")) {
-                swot_date = Date.valueOf(request.getParameter("swot_date"));
+                date = Date.valueOf(request.getParameter("date"));
             }
-            s.setSwot_date(swot_date);
+            s.setDate(date);
             s.setFrame(request.getParameter("frame"));
             s.setStrong(request.getParameter("strong"));
             s.setWeak(request.getParameter("weak"));

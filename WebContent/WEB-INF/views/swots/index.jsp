@@ -9,20 +9,20 @@
             </div>
         </c:if>
         <h2>SWOT</h2>
-        <table id="swot_list">
+        <table id="list">
             <tbody>
                 <tr>
-                    <th class="swot_name">Name</th>
-                    <th class="swot_date">Date</th>
-                    <th class="swot_title">Title</th>
-                    <th class="swot_action">Action</th>
+                    <th class="name">Name</th>
+                    <th class="date">Date</th>
+                    <th class="title">Title</th>
+                    <th class="action">Action</th>
                 </tr>
                 <c:forEach var="swot" items="${swots}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <td class="swot_name"><c:out value="${swot.user.name}" /></td>
-                        <td class="swot_date"><fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="swot_title">${swot.title.title}</td>
-                        <td class="swot_action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
+                        <td class="name"><c:out value="${swot.user.name}" /></td>
+                        <td class="date"><fmt:formatDate value='${swot.date}' pattern='yyyy-MM-dd' /></td>
+                        <td class="title">${swot.title.title}</td>
+                        <td class="action"><a href="<c:url value='/swots/show?id=${swot.id}' />">詳細を表示</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

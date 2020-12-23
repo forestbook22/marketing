@@ -41,6 +41,28 @@
                                 </c:otherwise>
                             </c:choose>
                         </tr>
+                        <tr>
+                            <th>PEST</th>
+                            <c:choose>
+                                <c:when test="${pest != null}">
+                                    <td><a href="<c:url value='/pests/show?id=${pest.id}' />">詳細を表示</a></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td><a href="<c:url value="/pests/new"/>">新規登録</a></td>
+                                </c:otherwise>
+                            </c:choose>
+                        </tr>
+                        <tr>
+                            <th>Segmentation</th>
+                            <c:choose>
+                                <c:when test="${seg != null}">
+                                    <td><a href="<c:url value='/segs/show?id=${seg.id}' />">詳細を表示</a></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td><a href="<c:url value="/segs/new"/>">新規登録</a></td>
+                                </c:otherwise>
+                            </c:choose>
+                        </tr>
                     </tbody>
                 </table>
                 <br>

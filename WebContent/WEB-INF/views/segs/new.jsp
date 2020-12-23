@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
-        <h2>SWOT　新規登録ページ</h2>
+        <h2>セグメンテーション　新規登録ページ</h2>
 
-        <form method="POST" action="<c:url value='/swots/create' />">
+        <form method="POST" action="<c:url value='/segs/create' />">
             <c:import url="_form.jsp" />
         </form>
 

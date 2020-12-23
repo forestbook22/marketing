@@ -8,7 +8,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>4P</h2>
+        <h2>セグメンテーション</h2>
         <table id="list">
             <tbody>
                 <tr>
@@ -17,26 +17,26 @@
                     <th class="title">Title</th>
                     <th class="action">Action</th>
                 </tr>
-                <c:forEach var="fourp" items="${fourps}" varStatus="status">
+                <c:forEach var="seg" items="${segs}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <td class="name"><c:out value="${fourp.user.name}" /></td>
-                        <td class="date"><fmt:formatDate value='${fourp.date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="title">${fourp.title.title}</td>
-                        <td class="action"><a href="<c:url value='/fourps/show?id=${fourp.id}' />">詳細を表示</a></td>
+                        <td class="name"><c:out value="${seg.user.name}" /></td>
+                        <td class="date"><fmt:formatDate value='${seg.date}' pattern='yyyy-MM-dd' /></td>
+                        <td class="title">${seg.title.title}</td>
+                        <td class="action"><a href="<c:url value='/segs/show?id=${seg.id}' />">詳細を表示</a></td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
 
         <div id="pagination">
-            （全 ${fourps_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((fourps_count - 1) / 15) + 1}" step="1">
+            （全 ${segs_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((segs_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
                     </c:when>
                     <c:otherwise>
-                        <a href="<c:url value='/fourps/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
+                        <a href="<c:url value='/segs/index?page=${i}' />"><c:out value="${i}" /></a>&nbsp;
                     </c:otherwise>
                 </c:choose>
             </c:forEach>

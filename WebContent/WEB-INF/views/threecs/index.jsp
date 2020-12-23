@@ -9,20 +9,20 @@
             </div>
         </c:if>
         <h2>3C</h2>
-        <table id="threec_list">
+        <table id="list">
             <tbody>
                 <tr>
-                    <th class="threec_name">Name</th>
-                    <th class="threec_date">Date</th>
-                    <th class="threec_title">Title</th>
-                    <th class="threec_action">Action</th>
+                    <th class="name">Name</th>
+                    <th class="date">Date</th>
+                    <th class="title">Title</th>
+                    <th class="action">Action</th>
                 </tr>
                 <c:forEach var="threec" items="${threecs}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <td class="threec_name"><c:out value="${threec.user.name}" /></td>
-                        <td class="threec_date"><fmt:formatDate value='${threec.threec_date}' pattern='yyyy-MM-dd' /></td>
-                        <td class="threec_title">${threec.title.title}</td>
-                        <td class="threec_action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">詳細を表示</a></td>
+                        <td class="name"><c:out value="${threec.user.name}" /></td>
+                        <td class="date"><fmt:formatDate value='${threec.date}' pattern='yyyy-MM-dd' /></td>
+                        <td class="title">${threec.title.title}</td>
+                        <td class="action"><a href="<c:url value='/threecs/show?id=${threec.id}' />">詳細を表示</a></td>
                     </tr>
                 </c:forEach>
             </tbody>

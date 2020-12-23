@@ -10,8 +10,8 @@
 
     </div>
 </c:if>
-<label for="swot_date">日付</label><br />
-<input type="date" name="swot_date" value="<fmt:formatDate value='${swot.swot_date}' pattern='yyyy-MM-dd' />" />
+<label for="date">日付</label><br />
+<input type="date" name="date" value="<fmt:formatDate value='${swot.date}' pattern='yyyy-MM-dd' />" />
 <br /><br />
 
 <label for="name">氏名</label><br />

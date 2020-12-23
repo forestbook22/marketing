@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import models.Fourp;
+import models.Pest;
+import models.Seg;
 import models.Swot;
 import models.Threec;
 import models.Title;
@@ -44,6 +46,8 @@ public class TitlesShowServlet extends HttpServlet {
         Fourp fourp = null;
         Swot swot = null;
         Threec threec = null;
+        Pest pest = null;
+        Seg seg = null;
 
             try {
                 fourp = em.createNamedQuery("getMyAllFourps", Fourp.class)
@@ -72,11 +76,32 @@ public class TitlesShowServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
+            try {
+                pest = em.createNamedQuery("getMyAllPests", Pest.class)
+                                        .setParameter("user", login_user)
+                                        .setParameter("title", users_title)
+                                        .getSingleResult();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+            try {
+                seg = em.createNamedQuery("getMyAllSegs", Seg.class)
+                                        .setParameter("user", login_user)
+                                        .setParameter("title", users_title)
+                                        .getSingleResult();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         em.close();
 
         request.setAttribute("fourp", fourp);
         request.setAttribute("swot", swot);
         request.setAttribute("threec", threec);
+        request.setAttribute("pest", pest);
+        request.setAttribute("seg", seg);
         request.getSession().setAttribute("users_title", users_title);
 
         if(request.getSession().getAttribute("flush") != null) {

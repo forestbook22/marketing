@@ -47,12 +47,12 @@ public class FourpsCreateServlet extends HttpServlet {
             f.setUser((User)request.getSession().getAttribute("login_user"));
             f.setTitle((Title)request.getSession().getAttribute("users_title"));
 
-            Date fourp_date = new Date(System.currentTimeMillis());
-            String rd_str = request.getParameter("fourp_date");
+            Date date = new Date(System.currentTimeMillis());
+            String rd_str = request.getParameter("date");
             if(rd_str != null && !rd_str.equals("")) {
-                fourp_date = Date.valueOf(request.getParameter("fourp_date"));
+                date = Date.valueOf(request.getParameter("date"));
             }
-            f.setFourp_date(fourp_date);
+            f.setDate(date);
             f.setFrame(request.getParameter("frame"));
             f.setProduct(request.getParameter("product"));
             f.setPrice(request.getParameter("price"));

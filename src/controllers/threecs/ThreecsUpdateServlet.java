@@ -42,7 +42,7 @@ public class ThreecsUpdateServlet extends HttpServlet {
 
             Threec t = em.find(Threec.class, (Integer)(request.getSession().getAttribute("threec_id")));
 
-            t.setThreec_date(Date.valueOf(request.getParameter("threec_date")));
+            t.setDate(Date.valueOf(request.getParameter("threec_date")));
             t.setFrame(request.getParameter("frame"));
             t.setCus(request.getParameter("cus"));
             t.setOwn(request.getParameter("own"));

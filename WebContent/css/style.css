@@ -163,18 +163,7 @@ td {
     width: 66%;
     padding: 10px 2%;
 }
-tbody:hover td,tbody:hover th {
-  color: transparent;
-  text-shadow: 0 0 3px #aaa;
-  background:#eee
-}
 
-tbody:hover tr:hover td,
-tbody:hover tr:hover th{
-  color: #444;
-  text-shadow: 0 1px 0 #fff;
-  background:#fff
-}
 button {
     font-size: 14px;
     padding: 5px 10px;
@@ -231,82 +220,29 @@ body {
   width: 100%;
 }
 
-table#fourp_list th {
+table#list th {
     background-color:grey;
     font-weight: bold;
     padding: 10px 2%;
     color:white
 }
 
-table#fourp_list .fourp_name {
+table#list .name {
     width: 20%;
     padding: 10px 2%;
 }
-table#fourp_list .fourp_date {
+table#list .date {
     width: 20%;
 }
 
-table#fourp_list .fourp_title {
+table#list .title {
     width: 37%;
 }
 
-table#fourp_list .fourp_action {
+table#list .action {
     width: 13%;
 }
 
-table#swot_list th {
-    background-color:grey;
-    font-weight: bold;
-    padding: 10px 2%;
-    color:white
-}
-
-table#swot_list .swot_name {
-    width: 15%;
-    padding: 10px 2%;
-}
-table#swot_list .swot_date {
-    width: 15%;
-}
-
-table#swot_list .swot_frame {
-    width: 20%;
-}
-
-table#swot_list .swot_title {
-    width: 27%;
-}
-
-table#swot_list .swot_action {
-    width: 13%;
-}
-
-table#threec_list th {
-    background-color:grey;
-    font-weight: bold;
-    padding: 10px 2%;
-    color:white
-}
-
-table#threec_list .threec_name {
-    width: 15%;
-    padding: 10px 2%;
-}
-table#threec_list .threec_date {
-    width: 15%;
-}
-
-table#threec_list .threec_frame {
-    width: 20%;
-}
-
-table#threec_list .threec_title {
-    width: 27%;
-}
-
-table#threec_list .threec_action {
-    width: 13%;
-}
 table#title_list th {
     background-color:grey;
     font-weight: bold;

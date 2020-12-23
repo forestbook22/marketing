@@ -4,33 +4,29 @@
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${fourp != null}">
-                <h2>4P　詳細ページ</h2>
+            <c:when test="${seg != null}">
+                <h2>セグメンテーション　詳細ページ</h2>
 
                 <table id = "show">
                     <tbody>
                         <tr>
                             <th>Name</th>
-                            <td><c:out value="${fourp.user.name}" /></td>
-                        </tr>
-                        <tr>
-                            <th>Date</th>
-                            <td><fmt:formatDate value="${fourp.date}" pattern="yyyy-MM-dd" /></td>
+                            <td><c:out value="${seg.user.name}" /></td>
                         </tr>
                         <tr>
                             <th>Title</th>
-                            <td><c:out value="${fourp.title.title}" /></td>
+                            <td><c:out value="${seg.title.title}" /></td>
                         </tr>
                         <tr>
                             <th>Created_at</th>
                             <td>
-                                <fmt:formatDate value="${fourp.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
+                                <fmt:formatDate value="${seg.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
                         </tr>
                         <tr>
                             <th>Update_at</th>
                             <td>
-                                <fmt:formatDate value="${fourp.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" />
+                                <fmt:formatDate value="${seg.updated_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                             </td>
                         </tr>
                     </tbody>
@@ -58,19 +54,19 @@
                        //Product
                        ctx.fillText("Product", 200, 50);
                        ctx.strokeRect(55,55,400,150);
-                       ctx.fillText("${fourp.product}", (500 - ctx.measureText( "${fourp.product}" ).width) / 2, 125, 400,150);
+                       ctx.fillText("${seg.product}", (500 - ctx.measureText( "${seg.product}" ).width) / 2, 125, 400,150);
                        //Price
                        ctx.fillText("Price", 720, 50);
                        ctx.strokeRect(555,55,400,150);
-                       ctx.fillText("${fourp.price}",  (1500 - ctx.measureText( "${fourp.price}" ).width) / 2, 125, 400,150);
+                       ctx.fillText("${seg.price}",  (1500 - ctx.measureText( "${seg.price}" ).width) / 2, 125, 400,150);
                        //Place
                        ctx.fillText("Place", 200, 300);
                        ctx.strokeRect(55,305,400,150);
-                       ctx.fillText("${fourp.place}",  (500 - ctx.measureText("${fourp.place}").width) / 2, 375, 400,150);
+                       ctx.fillText("${seg.place}",  (500 - ctx.measureText("${seg.place}").width) / 2, 375, 400,150);
                        //Promotion
                        ctx.fillText("Promotion", 680, 300);
                        ctx.strokeRect(555,305,400,150);
-                       ctx.fillText("${fourp.promotion}" , (1500 - ctx.measureText("${fourp.promotion}").width) / 2, 375, 400,150);
+                       ctx.fillText("${seg.promotion}" , (1500 - ctx.measureText("${seg.promotion}").width) / 2, 375, 400,150);
                        ctx.stroke();
                        //真ん中
                        ctx.beginPath();
@@ -111,7 +107,7 @@
                        ctx.stroke();
                     }
                    </script>
-                <c:if test="${sessionScope.login_user.id == fourp.user.id}">
+                <c:if test="${sessionScope.login_user.id == seg.user.id}">
                     <div id="point">
                     <h2>活用法</h2>
                         <h3><span id = "double">戦略に大きなズレがないか確認</span></h3>
@@ -125,7 +121,7 @@
                         <p>4Pが主に自社の戦略を分析するのに対し、3C分析では市場・顧客や競合企業の分析など外部環境について分析する。
                         そこで、4P分析と3C分析を組み合わせることで、自社の戦略をより精度の高いものにすることができる！</p>
                     </div>
-                    <p><a href="<c:url value="/fourps/edit?id=${fourp.id}" />">このフレームワークを編集する</a></p>
+                    <p><a href="<c:url value="/segs/edit?id=${seg.id}" />">このフレームワークを編集する</a></p>
                 </c:if>
             </c:when>
             <c:otherwise>
@@ -133,6 +129,6 @@
             </c:otherwise>
         </c:choose>
 
-        <p><a href="<c:url value="/fourps/index" />">一覧に戻る</a></p>
+        <p><a href="<c:url value="/segs/index" />">一覧に戻る</a></p>
     </c:param>
 </c:import>

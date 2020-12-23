@@ -1,4 +1,4 @@
-package controllers.threecs;
+package controllers.pests;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -13,23 +13,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Threec;
+import models.Pest;
 import models.Title;
 import models.User;
-import models.validators.ThreecValidator;
+import models.validators.PestValidator;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class ThreecsCreateServlet
+ * Servlet implementation class ReportsCreateServlet
  */
-@WebServlet("/threecs/create")
-public class ThreecsCreateServlet extends HttpServlet {
+@WebServlet("/pests/create")
+public class PestsCreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ThreecsCreateServlet() {
+    public PestsCreateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,47 +42,49 @@ public class ThreecsCreateServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Threec t = new Threec();
+            Pest p = new Pest();
 
-            t.setUser((User)request.getSession().getAttribute("login_user"));
-            t.setTitle((Title)request.getSession().getAttribute("users_title"));
+            p.setUser((User)request.getSession().getAttribute("login_user"));
+            p.setTitle((Title)request.getSession().getAttribute("users_title"));
 
             Date date = new Date(System.currentTimeMillis());
             String rd_str = request.getParameter("date");
             if(rd_str != null && !rd_str.equals("")) {
                 date = Date.valueOf(request.getParameter("date"));
             }
-            t.setDate(date);
-            t.setFrame(request.getParameter("frame"));
-            t.setCus(request.getParameter("cus"));
-            t.setOwn(request.getParameter("own"));
-            t.setCompe(request.getParameter("compe"));
-            t.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
+            p.setDate(date);
+            p.setFrame(request.getParameter("frame"));
+            p.setPoli(request.getParameter("poli"));
+            p.setEco(request.getParameter("eco"));
+            p.setSoci(request.getParameter("soci"));
+            p.setTech(request.getParameter("tech"));
+            p.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
-            t.setCreated_at(currentTime);
-            t.setUpdated_at(currentTime);
-            t.setDelete_flag(0);
+            p.setCreated_at(currentTime);
+            p.setUpdated_at(currentTime);
+            p.setDelete_flag(0);
 
-            List<String> errors = ThreecValidator.validate(t);
+            List<String> errors = PestValidator.validate(p);
             if(errors.size() > 0) {
                 em.close();
 
                 request.setAttribute("_token", request.getSession().getId());
-                request.setAttribute("threec", t);
+                request.setAttribute("pest", p);
                 request.setAttribute("errors", errors);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/threecs/new.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/pests/new.jsp");
                 rd.forward(request, response);
             } else {
                 em.getTransaction().begin();
-                em.persist(t);
+                em.persist(p);
                 em.getTransaction().commit();
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
 
                 response.sendRedirect(request.getContextPath() + "/");
             }
+        }
     }
-    }
+
 }

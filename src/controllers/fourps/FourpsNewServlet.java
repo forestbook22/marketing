@@ -34,7 +34,7 @@ public class FourpsNewServlet extends HttpServlet {
         request.setAttribute("_token", request.getSession().getId());
 
         Fourp f = new Fourp();
-        f.setFourp_date(new Date(System.currentTimeMillis()));
+        f.setDate(new Date(System.currentTimeMillis()));
         request.setAttribute("fourp", f);
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/fourps/new.jsp");

@@ -15,7 +15,7 @@
                         </tr>
                         <tr>
                             <th>Date</th>
-                            <td><fmt:formatDate value="${threec.threec_date}" pattern="yyyy-MM-dd" /></td>
+                            <td><fmt:formatDate value="${threec.date}" pattern="yyyy-MM-dd" /></td>
                         </tr>
                         <tr>
                             <th>Title</th>

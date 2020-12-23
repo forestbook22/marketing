@@ -7,6 +7,9 @@
 		<class>models.Swot</class>
 		<class>models.Threec</class>
 		<class>models.Title</class>
+		<class>models.Pest</class>
+		<class>models.Framework</class>
+		<class>models.Seg</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/marketing?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>

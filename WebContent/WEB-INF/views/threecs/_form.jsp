@@ -10,8 +10,8 @@
 
     </div>
 </c:if>
-<label for="threec_date">日付</label><br />
-<input type="date" name="threec_date" value="<fmt:formatDate value='${threec.threec_date}' pattern='yyyy-MM-dd' />" />
+<label for="date">日付</label><br />
+<input type="date" name="date" value="<fmt:formatDate value='${threec.date}' pattern='yyyy-MM-dd' />" />
 <br /><br />
 
 <label for="name">氏名</label><br />

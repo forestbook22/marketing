@@ -11,7 +11,7 @@
     </div>
 </c:if>
 <label for="date">日付</label><br />
-<input type="date" name="date" value="<fmt:formatDate value='${fourp.date}' pattern='yyyy-MM-dd' />" />
+<input type="date" name="date" value="<fmt:formatDate value='${pest.date}' pattern='yyyy-MM-dd' />" />
 <br /><br />
 
 <label for="name">氏名</label><br />
@@ -25,25 +25,25 @@
 <c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
-<label for="product">Product:　企業の利益の源泉となる商品（品質・デザイン・ブランド名）は？</label><br />
-<textarea name="product" rows="1" cols="50">${fourp.product}</textarea>
+<label for="poli">Politics:　商品・戦略に関係する政治的な制度などの変化は？</label><br />
+<textarea name="poli" rows="1" cols="50">${pest.poli}</textarea>
 <br /><br />
 
-<label for="price">Price:　競合と比較したときの価格帯は？</label><br />
-<textarea name="price" rows="1" cols="50">${fourp.price}</textarea>
+<label for="eco">Economy:　商品・戦略に関係する経済・金融的変化は？</label><br />
+<textarea name="eco" rows="1" cols="50">${pest.eco}</textarea>
 <br /><br />
 
-<label for="place">Place:　製品を市場に流通させるための販売経路・場所は？</label><br />
-<textarea name="place" rows="1" cols="50">${fourp.place}</textarea>
+<label for="soci">Society:　商品・戦略に関係する社会や人々の考え方の変化は？</label><br />
+<textarea name="soci" rows="1" cols="50">${pest.soci}</textarea>
 <br /><br />
 
-<label for="promotion">Promotion:　顧客に認知してもらう方法は？</label><br />
-<textarea name="promotion" rows="1" cols="50">${fourp.promotion}</textarea>
+<label for="tech">Technology:　商品・戦略に関する技術の変化や最近のトレンドは？</label><br />
+<textarea name="tech" rows="1" cols="50">${pest.tech}</textarea>
 <br /><br />
 
 <select name="show_flag">
-    <option value="0"<c:if test="${fourp.show_flag == 0}"> selected</c:if>>公開</option>
-    <option value="1"<c:if test="${fourp.show_flag == 1}"> selected</c:if>>非公開</option>
+    <option value="0"<c:if test="${pest.show_flag == 0}"> selected</c:if>>公開</option>
+    <option value="1"<c:if test="${pest.show_flag == 1}"> selected</c:if>>非公開</option>
 </select>
 <br /><br />
 

@@ -1,4 +1,4 @@
-package controllers.swots;
+package controllers.segs;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Swot;
+import models.Seg;
 
 /**
- * Servlet implementation class SwotsNewServlet
+ * Servlet implementation class SegsNewServlet
  */
-@WebServlet("/swots/new")
-public class SwotsNewServlet extends HttpServlet {
+@WebServlet("/segs/new")
+public class SegsNewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SwotsNewServlet() {
+    public SegsNewServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,12 +33,11 @@ public class SwotsNewServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("_token", request.getSession().getId());
 
-        Swot s = new Swot();
-        s.setDate(new Date(System.currentTimeMillis()));
-        request.setAttribute("swot", s);
+        Seg se = new Seg();
+        se.setDate(new Date(System.currentTimeMillis()));
+        request.setAttribute("seg", se);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/swots/new.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/segs/new.jsp");
         rd.forward(request, response);
     }
-
 }

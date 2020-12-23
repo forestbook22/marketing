@@ -1,4 +1,4 @@
-package controllers.swots;
+package controllers.segs;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -13,25 +13,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Swot;
-import models.validators.SwotValidator;
+import models.Seg;
+import models.validators.SegValidator;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class SwotsUpdateServlet
+ * Servlet implementation class SegsDestroyServlet
  */
-@WebServlet("/swots/update")
-public class SwotsUpdateServlet extends HttpServlet {
+@WebServlet("/segs/update")
+public class SegsUpdateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SwotsUpdateServlet() {
+    public SegsUpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
@@ -40,25 +39,27 @@ public class SwotsUpdateServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Swot s = em.find(Swot.class, (Integer)(request.getSession().getAttribute("swot_id")));
+            Seg se = em.find(Seg.class, (Integer)(request.getSession().getAttribute("seg_id")));
 
-            s.setDate(Date.valueOf(request.getParameter("swot_date")));
-            s.setFrame(request.getParameter("frame"));
-            s.setStrong(request.getParameter("strong"));
-            s.setWeak(request.getParameter("weak"));
-            s.setOpp(request.getParameter("opp"));
-            s.setThre(request.getParameter("thre"));
-            s.setUpdated_at(new Timestamp(System.currentTimeMillis()));
+            se.setDate(Date.valueOf(request.getParameter("date")));
+            se.setFrame(request.getParameter("frame"));
+            se.setX(Integer.parseInt(request.getParameter("x")));
+            se.setY(Integer.parseInt(request.getParameter("y")));
+            se.setOne(request.getParameter("one"));
+            se.setTwo(request.getParameter("two"));
+            se.setThree(request.getParameter("three"));
+            se.setFour(request.getParameter("four"));
+            se.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
-            List<String> errors = SwotValidator.validate(s);
+            List<String> errors = SegValidator.validate(se);
             if(errors.size() > 0) {
                 em.close();
 
                 request.setAttribute("_token", request.getSession().getId());
-                request.setAttribute("swot", s);
+                request.setAttribute("seg", se);
                 request.setAttribute("errors", errors);
 
-                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/swots/edit.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/segs/edit.jsp");
                 rd.forward(request, response);
             } else {
                 em.getTransaction().begin();
@@ -66,9 +67,9 @@ public class SwotsUpdateServlet extends HttpServlet {
                 em.close();
                 request.getSession().setAttribute("flush", "更新が完了しました。");
 
-                request.getSession().removeAttribute("swot_id");
+                request.getSession().removeAttribute("seg_id");
 
-                response.sendRedirect(request.getContextPath() + "/swots/index");
+                response.sendRedirect(request.getContextPath() + "/segs/index");
             }
         }
     }

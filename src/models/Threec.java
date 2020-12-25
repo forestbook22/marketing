@@ -11,11 +11,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllThreecs",
-            query = "SELECT t FROM Threec AS t WHERE t.delete_flag = 0 AND t.show_flag = 0 ORDER BY t.id DESC"
+            query = "SELECT t FROM Threec AS t WHERE t.show_flag = 0 ORDER BY t.id DESC"
             ),
     @NamedQuery(
             name = "getThreecsCount",
-            query = "SELECT COUNT(t) FROM Threec AS t WHERE t.delete_flag = 0 AND t.show_flag = 0"
+            query = "SELECT COUNT(t) FROM Threec AS t WHERE t.show_flag = 0"
             ),
     @NamedQuery(
             name = "getMyAllThreecs",

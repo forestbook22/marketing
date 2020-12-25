@@ -41,7 +41,7 @@ public class FourpsUpdateServlet extends HttpServlet {
 
             Fourp f = em.find(Fourp.class, (Integer)(request.getSession().getAttribute("fourp_id")));
 
-            f.setDate(Date.valueOf(request.getParameter("fourp_date")));
+            f.setDate(Date.valueOf(request.getParameter("date")));
             f.setFrame(request.getParameter("frame"));
             f.setProduct(request.getParameter("product"));
             f.setPrice(request.getParameter("price"));

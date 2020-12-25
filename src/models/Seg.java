@@ -11,11 +11,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllSegs",
-            query = "SELECT se FROM Seg AS se WHERE se.delete_flag = 0 AND se.show_flag = 0 ORDER BY se.id DESC"
+            query = "SELECT se FROM Seg AS se WHERE se.show_flag = 0 ORDER BY se.id DESC"
             ),
     @NamedQuery(
             name = "getSegsCount",
-            query = "SELECT COUNT(se) FROM Seg AS se WHERE se.delete_flag = 0 AND se.show_flag = 0"
+            query = "SELECT COUNT(se) FROM Seg AS se WHERE se.show_flag = 0"
             ),
     @NamedQuery(
             name = "getMyAllSegs",
@@ -32,8 +32,20 @@ public class Seg extends Framework{
     @Column(name = "y", nullable = false)
     private Integer y;
 
+    @Column(name = "y1", nullable = false)
+    private String y1;
+
+    @Column(name = "y2", nullable = false)
+    private String y2;
+
     @Column(name = "x", nullable = false)
     private Integer x;
+
+    @Column(name = "x1", nullable = false)
+    private String x1;
+
+    @Column(name = "x2", nullable = false)
+    private String x2;
 
     @Lob
     @Column(name = "one", nullable = false)
@@ -65,6 +77,39 @@ public class Seg extends Framework{
 
     public void setX(Integer x) {
         this.x = x;
+    }
+
+
+    public String getY1() {
+        return y1;
+    }
+
+    public void setY1(String y1) {
+        this.y1 = y1;
+    }
+
+    public String getY2() {
+        return y2;
+    }
+
+    public void setY2(String y2) {
+        this.y2 = y2;
+    }
+
+    public String getX1() {
+        return x1;
+    }
+
+    public void setX1(String x1) {
+        this.x1 = x1;
+    }
+
+    public String getX2() {
+        return x2;
+    }
+
+    public void setX2(String x2) {
+        this.x2 = x2;
     }
 
     public String getOne() {

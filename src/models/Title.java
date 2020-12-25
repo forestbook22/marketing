@@ -14,11 +14,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getMyAllTitles",
-            query = "SELECT ti FROM Title AS ti WHERE ti.user = :user ORDER BY ti.id DESC"
+            query = "SELECT ti FROM Title AS ti WHERE ti.user = :user AND ti.delete_flag = 0 ORDER BY ti.id DESC"
             ),
     @NamedQuery(
             name = "getMyTitlesCount",
-            query = "SELECT COUNT(ti) FROM Title AS ti WHERE ti.user = :user"
+            query = "SELECT COUNT(ti) FROM Title AS ti WHERE ti.user = :user AND ti.delete_flag = 0"
             )
 })
 @Entity

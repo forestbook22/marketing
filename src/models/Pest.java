@@ -10,11 +10,11 @@ import javax.persistence.Table;
 @NamedQueries({
     @NamedQuery(
             name = "getAllPests",
-            query = "SELECT p FROM Pest AS p WHERE p.delete_flag = 0 AND p.show_flag = 0 ORDER BY p.id DESC"
+            query = "SELECT p FROM Pest AS p WHERE p.show_flag = 0 ORDER BY p.id DESC"
             ),
     @NamedQuery(
             name = "getPestsCount",
-            query = "SELECT COUNT(p) FROM Pest AS p WHERE p.delete_flag = 0 AND p.show_flag = 0"
+            query = "SELECT COUNT(p) FROM Pest AS p WHERE p.show_flag = 0"
             ),
     @NamedQuery(
             name = "getMyAllPests",

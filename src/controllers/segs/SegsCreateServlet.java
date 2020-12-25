@@ -55,7 +55,11 @@ public class SegsCreateServlet extends HttpServlet {
             se.setDate(date);
             se.setFrame(request.getParameter("frame"));
             se.setX(Integer.parseInt(request.getParameter("x")));
+            se.setX1(request.getParameter("x1"));
+            se.setX2(request.getParameter("x2"));
             se.setY(Integer.parseInt(request.getParameter("y")));
+            se.setY1(request.getParameter("y1"));
+            se.setY2(request.getParameter("y2"));
             se.setOne(request.getParameter("one"));
             se.setTwo(request.getParameter("two"));
             se.setThree(request.getParameter("three"));

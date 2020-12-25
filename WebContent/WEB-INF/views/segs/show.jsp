@@ -39,87 +39,173 @@
                    window.onload=()=>{
                        const board = document.querySelector("#board");
                        const ctx = board.getContext("2d");
+                       var tategaki = function(context, text, x, y) {
+                           var textList = text.split('\n');
+                           var lineHeight = ctx.measureText("あ").width;
+                           textList.forEach(function(elm, i) {
+                             Array.prototype.forEach.call(elm, function(ch, j) {
+                               ctx.fillText(ch, x-lineHeight*i, y+lineHeight*j);
+                             });
+                           });
+                         };
+                       var x = "${seg.x}";
+                       if(x == 0){
+                           x = "地方"
+                       }
+                       if(x == 1){
+                           x = "気候"
+                       }
+                       if(x == 2){
+                           x = "人口密度"
+                       }
+                       if(x == 3){
+                           x = "年齢"
+                       }
+                       if(x == 4){
+                           x = "性別"
+                       }
+                       if(x == 5){
+                           x = "家族構成"
+                       }
+                       if(x == 6){
+                           x = "所得"
+                       }
+                       if(x == 7){
+                           x = "職業"
+                       }
+                       if(x = 8){
+                           x = "ライフスタイル"
+                       }
+                       if(x == 9){
+                           x = "パーソナリティ"
+                       }
+                       if(x == 10){
+                           x = "使用率"
+                       }
+                       if(x == 11){
+                           x = "ベネフィット"
+                       }
+
+                       var y = "${seg.y}";
+                       if(y == 0){
+                           y = "地方"
+                       }
+                       if(y == 1){
+                           y = "気候"
+                       }
+                       if(y == 2){
+                           y = "人口密度"
+                       }
+                       if(y == 3){
+                           y = "年齢"
+                       }
+                       if(y == 4){
+                           y = "性別"
+                       }
+                       if(y == 5){
+                           y = "家族構成"
+                       }
+                       if(y == 6){
+                           y = "所得"
+                       }
+                       if(y == 7){
+                           y = "職業"
+                       }
+                       if(y == 8){
+                           y = "ライフスタイル"
+                       }
+                       if(y == 9){
+                           y = "パーソナリティ"
+                       }
+                       if(y == 10){
+                           y = "使用率"
+                       }
+                       if(y == 11){
+                           y = "ベネフィット"
+                       }
                        ctx.beginPath();
-                       ctx.font = "30px serif";
+                       ctx.font = "25px serif";
                        ctx.strokeStyle = "black"
                        //横線
-                       ctx.moveTo(25, 250);          // 始点
-                       ctx.lineTo(975, 250);        // 終点
-                       //縦線
-                       ctx.moveTo(500, 0);          // 始点
-                       ctx.lineTo(500, 500);        // 終点
+                       ctx.beginPath();
+                       ctx.moveTo(300, 0);
+                       ctx.lineTo(700, 0);
+                       ctx.moveTo(300, 200);
+                       ctx.lineTo(700, 200);
+                       ctx.moveTo(300, 400);
+                       ctx.lineTo(700, 400);
                        ctx.stroke()
+                       //縦線
                        ctx.beginPath();
-                       ctx.strokeStyle = "crimson"
-                       //Product
-                       ctx.fillText("Product", 200, 50);
-                       ctx.strokeRect(55,55,400,150);
-                       ctx.fillText("${seg.product}", (500 - ctx.measureText( "${seg.product}" ).width) / 2, 125, 400,150);
-                       //Price
-                       ctx.fillText("Price", 720, 50);
-                       ctx.strokeRect(555,55,400,150);
-                       ctx.fillText("${seg.price}",  (1500 - ctx.measureText( "${seg.price}" ).width) / 2, 125, 400,150);
-                       //Place
-                       ctx.fillText("Place", 200, 300);
-                       ctx.strokeRect(55,305,400,150);
-                       ctx.fillText("${seg.place}",  (500 - ctx.measureText("${seg.place}").width) / 2, 375, 400,150);
-                       //Promotion
-                       ctx.fillText("Promotion", 680, 300);
-                       ctx.strokeRect(555,305,400,150);
-                       ctx.fillText("${seg.promotion}" , (1500 - ctx.measureText("${seg.promotion}").width) / 2, 375, 400,150);
-                       ctx.stroke();
-                       //真ん中
+                       ctx.moveTo(300, 0);
+                       ctx.lineTo(300, 400);
+                       ctx.moveTo(500, 0);
+                       ctx.lineTo(500, 400);
+                       ctx.moveTo(700, 0);
+                       ctx.lineTo(700, 400);
+                       ctx.stroke()
+
+                       //第1象限
                        ctx.beginPath();
-                       ctx.fillStyle="crimson";
-                       ctx.arc(500, 250, 80, 0, Math.PI * 2, true);
+                       ctx.fillStyle = "#CC99CC"
+                       ctx.fillRect(520,20,160, 160);
                        ctx.fill();
+                       //第2象限
                        ctx.beginPath();
-                       ctx.font = "60px 'sans-serif'";
-                       ctx.fillStyle="white";
-                       ctx.fillText("4P",460,270)
+                       ctx.fillStyle = "#3399CC"
+                       ctx.fillRect(320,20, 160, 160);
                        ctx.fill();
+                       //第3象限
                        ctx.beginPath();
-                       ctx.arc(500, 250, 100,( 110 * Math.PI) / 180 , (260 * Math.PI) / 180, false);
-                       ctx.strokeStyle = "crimson";
-                       ctx.lineWidth = 5;
-                       ctx.stroke();
+                       ctx.fillStyle = "#99CC00"
+                       ctx.fillRect(320, 220, 160, 160);
+                       ctx.fill();
+                       //第4象限
                        ctx.beginPath();
-                       ctx.moveTo(500, 150);
-                       ctx.lineTo(483, 140);
-                       ctx.moveTo(483, 140);
-                       ctx.lineTo(483, 160);
-                       ctx.moveTo(483, 160);
-                       ctx.lineTo(500, 150);
-                       ctx.lineWidth = 1;
-                       ctx.stroke();
+                       ctx.fillStyle = "#FF9933"
+                       ctx.fillRect(520 ,220, 160, 160);
+                       ctx.fill();
+
+                       //中の文字
                        ctx.beginPath();
-                       ctx.arc(500, 250, 100,( 290 * Math.PI) / 180 , (80 * Math.PI) / 180, false);
-                       ctx.lineWidth = 5;
+                       ctx.fillStyle = "white"
+                       ctx.fillText("${seg.one}", (1200 - ctx.measureText( "${seg.one}" ).width) / 2, 100, 400,150);
+                       ctx.fillText("${seg.two}",  (800 - ctx.measureText( "${seg.two}" ).width) / 2, 100, 400,150);
+                       ctx.fillText("${seg.three}",  (800 - ctx.measureText("${seg.three}").width) / 2, 300, 400,150);
+                       ctx.fillText("${seg.four}" , (1200 - ctx.measureText("${seg.four}").width) / 2, 300, 400,150);
                        ctx.stroke();
+
+                       //縦軸の文字
                        ctx.beginPath();
-                       ctx.moveTo(500, 350);
-                       ctx.lineTo(517, 340);
-                       ctx.moveTo(517, 340);
-                       ctx.lineTo(517, 360);
-                       ctx.moveTo(517, 360);
-                       ctx.lineTo(500, 350);
-                       ctx.lineWidth = 1;
+                       ctx.fillStyle = "black"
+                       ctx.font = "15px serif";
+                       tategaki(ctx, y, 220, 170);
+                       ctx.font = "20px serif";
+                       tategaki(ctx, "${seg.y1}", 250, 80);
+                       tategaki(ctx, "${seg.y2}", 250, 300)
                        ctx.stroke();
+                       //横軸の文字
+                       ctx.beginPath();
+                       ctx.fillStyle = "black"
+                       ctx.font = "15px serif";
+                       ctx.fillText(x, (900 - ctx.measureText( "${seg.x}" ).width) / 2, 480, 400,150);
+                       ctx.font = "20px serif";
+                       ctx.fillText("${seg.x1}",  (800 - ctx.measureText( "${seg.x1}" ).width) / 2, 450, 400,150);
+                       ctx.fillText("${seg.x2}",  (1200 - ctx.measureText("${seg.x2}").width) / 2, 450, 400,150);
+                       ctx.stroke();
+
                     }
                    </script>
                 <c:if test="${sessionScope.login_user.id == seg.user.id}">
                     <div id="point">
                     <h2>活用法</h2>
-                        <h3><span id = "double">戦略に大きなズレがないか確認</span></h3>
-                        <p>製品・価格・流通・販売促進それぞれがターゲットのニーズに合致し、
-                        価値を感じる製品やサービスを提供するために最適かの「整合性」を確認！</p>
-                        <h3><span id = "double">4Pをミックスし、今後の施策を考える</span></h3>
-                        <p>複数のPをかけ合わせることで、自社に適した戦略をとることができる</p>
-                        <p>ex)飲食物で、品質が良く（Product）、価格もやや高めだが（Price）、コンビニやスーパーで購入できる（Place）
-                        ＝日常の贅沢を感じさせる商品としてのプロモーションへ</p>
-                        <h3><span id = "double">3Cと組み合わせる</span></h3>
-                        <p>4Pが主に自社の戦略を分析するのに対し、3C分析では市場・顧客や競合企業の分析など外部環境について分析する。
-                        そこで、4P分析と3C分析を組み合わせることで、自社の戦略をより精度の高いものにすることができる！</p>
+                        <h3><span id = "double"></span></h3>
+                        <p></p>
+                        <h3><span id = "double"></span></h3>
+                        <p></p>
+                        <p></p>
+                        <h3><span id = "double"></span></h3>
+                        <p></p>
                     </div>
                     <p><a href="<c:url value="/segs/edit?id=${seg.id}" />">このフレームワークを編集する</a></p>
                 </c:if>
@@ -128,7 +214,6 @@
                 <h2>お探しのデータは見つかりませんでした。</h2>
             </c:otherwise>
         </c:choose>
-
-        <p><a href="<c:url value="/segs/index" />">一覧に戻る</a></p>
+        <p><a href="<c:url value='/titles/show?id=${seg.title.id }' />">一覧に戻る</a></p>
     </c:param>
 </c:import>

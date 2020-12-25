@@ -25,24 +25,7 @@
 <c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
-<label for="x">縦軸</label><br />
-<select name="x">
-    <option value="0"<c:if test="${seg.x == 0}"> selected</c:if>>地方</option>
-    <option value="1"<c:if test="${seg.x == 1}"> selected</c:if>>気候</option>
-    <option value="2"<c:if test="${seg.x == 2}"> selected</c:if>>人口密度</option>
-    <option value="3"<c:if test="${seg.x == 3}"> selected</c:if>>年齢</option>
-    <option value="4"<c:if test="${seg.x == 4}"> selected</c:if>>性別</option>
-    <option value="5"<c:if test="${seg.x == 5}"> selected</c:if>>家族構成</option>
-    <option value="6"<c:if test="${seg.x == 6}"> selected</c:if>>所得</option>
-    <option value="7"<c:if test="${seg.x == 7}"> selected</c:if>>職業</option>
-    <option value="8"<c:if test="${seg.x == 8}"> selected</c:if>>ライフスタイル</option>
-    <option value="9"<c:if test="${seg.x == 9}"> selected</c:if>>パーソナリティ</option>
-    <option value="10"<c:if test="${seg.x == 10}"> selected</c:if>>使用率</option>
-    <option value="11"<c:if test="${seg.x == 11}"> selected</c:if>>ベネフィット</option>
-</select>
-<br /><br />
-
-<label for="y">横軸</label><br />
+変数は
 <select name="y">
     <option value="0"<c:if test="${seg.y == 0}"> selected</c:if>>地方</option>
     <option value="1"<c:if test="${seg.y == 1}"> selected</c:if>>気候</option>
@@ -57,21 +40,42 @@
     <option value="10"<c:if test="${seg.y == 10}"> selected</c:if>>使用率</option>
     <option value="11"<c:if test="${seg.y == 11}"> selected</c:if>>ベネフィット</option>
 </select>
+で、セグメンテーションは①<input type="text" name="y1" value="${seg.y1}" />
+と②<input type="text" name="y2" value="${seg.y2}" />
 <br /><br />
 
-<label for="one">第1象限</label><br />
+変数は
+<select name="x">
+    <option value="0"<c:if test="${seg.x == 0}"> selected</c:if>>地方</option>
+    <option value="1"<c:if test="${seg.x == 1}"> selected</c:if>>気候</option>
+    <option value="2"<c:if test="${seg.x == 2}"> selected</c:if>>人口密度</option>
+    <option value="3"<c:if test="${seg.x == 3}"> selected</c:if>>年齢</option>
+    <option value="4"<c:if test="${seg.x == 4}"> selected</c:if>>性別</option>
+    <option value="5"<c:if test="${seg.x == 5}"> selected</c:if>>家族構成</option>
+    <option value="6"<c:if test="${seg.x == 6}"> selected</c:if>>所得</option>
+    <option value="7"<c:if test="${seg.x == 7}"> selected</c:if>>職業</option>
+    <option value="8"<c:if test="${seg.x == 8}"> selected</c:if>>ライフスタイル</option>
+    <option value="9"<c:if test="${seg.x == 9}"> selected</c:if>>パーソナリティ</option>
+    <option value="10"<c:if test="${seg.x == 10}"> selected</c:if>>使用率</option>
+    <option value="11"<c:if test="${seg.x == 11}"> selected</c:if>>ベネフィット</option>
+</select>
+で、セグメンテーションは③<input type="text" name="x1" value="${seg.x1}" />
+と④<input type="text" name="x2" value="${seg.x2}" />
+<br /><br />
+
+<label for="one">第1象限:　①と④の特徴を持つ人に名前を付けるとしたら？？</label><br />
 <textarea name="one" rows="1" cols="50">${seg.one}</textarea>
 <br /><br />
 
-<label for="two">第2象限</label><br />
+<label for="two">第2象限:　①と③の特徴を持つ人に名前を付けるとしたら？？</label><br />
 <textarea name="two" rows="1" cols="50">${seg.two}</textarea>
 <br /><br />
 
-<label for="three">第3象限</label><br />
+<label for="three">第3象限:　②と③の特徴を持つ人に名前を付けるとしたら？？</label><br />
 <textarea name="three" rows="1" cols="50">${seg.three}</textarea>
 <br /><br />
 
-<label for="four">第4象限</label><br />
+<label for="four">第4象限:　②と④の特徴を持つ人に名前を付けるとしたら？？</label><br />
 <textarea name="four" rows="1" cols="50">${seg.four}</textarea>
 <br /><br />
 

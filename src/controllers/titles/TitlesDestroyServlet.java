@@ -35,7 +35,7 @@ public class TitlesDestroyServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            Title ti = em.find(Title.class, (Integer)(request.getSession().getAttribute("id")));
+            Title ti = em.find(Title.class, (Integer)(request.getSession().getAttribute("title_id")));
 
             ti.setDelete_flag(1);
 
@@ -44,7 +44,7 @@ public class TitlesDestroyServlet extends HttpServlet {
             em.close();
             request.getSession().setAttribute("flush", "削除が完了しました。");
 
-            response.sendRedirect(request.getContextPath() + "/titles/index");
+            response.sendRedirect(request.getContextPath() + "/");
     }
 
     }

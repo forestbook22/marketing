@@ -22,6 +22,7 @@
                         <a href="<c:url value='/threecs/index' />">3C</a>&nbsp;
                         <a href="<c:url value='/pests/index' />">PEST</a>&nbsp;
                         <a href="<c:url value='/segs/index' />">Segmentation</a>&nbsp;
+                        <a href="<c:url value='/targets/index' />">Targeting</a>&nbsp;
                     </c:if>
                 </div>
                 <c:if test="${sessionScope.login_user != null}">

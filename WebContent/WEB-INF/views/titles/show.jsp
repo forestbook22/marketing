@@ -63,6 +63,17 @@
                                 </c:otherwise>
                             </c:choose>
                         </tr>
+                        <tr>
+                            <th>Targeting</th>
+                            <c:choose>
+                                <c:when test="${target != null}">
+                                    <td><a href="<c:url value='/targets/show?id=${target.id}' />">詳細を表示</a></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td><a href="<c:url value="/targets/new"/>">新規登録</a></td>
+                                </c:otherwise>
+                            </c:choose>
+                        </tr>
                     </tbody>
                 </table>
                 <br>

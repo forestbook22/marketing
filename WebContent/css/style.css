@@ -289,3 +289,32 @@ span#double{
 div#point p{
     padding-left: 20px;
 }
+table#target {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+tr#title{
+    background-color:grey;
+    color:white;
+}
+table#target .Segmentation {
+    width:22%;
+}
+table#target .real {
+    width:13%;
+}
+table#target .rate {
+    width:13%;
+}
+table#target .rank {
+    width:13%;
+}
+table#target .reach {
+    width:13%;
+}
+table#target .rival {
+    width:13%;
+}
+table#target .response {
+    width:13%;
+}

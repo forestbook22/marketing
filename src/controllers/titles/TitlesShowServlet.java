@@ -14,6 +14,7 @@ import models.Fourp;
 import models.Pest;
 import models.Seg;
 import models.Swot;
+import models.Target;
 import models.Threec;
 import models.Title;
 import models.User;
@@ -48,6 +49,7 @@ public class TitlesShowServlet extends HttpServlet {
         Threec threec = null;
         Pest pest = null;
         Seg seg = null;
+        Target target = null;
 
             try {
                 fourp = em.createNamedQuery("getMyAllFourps", Fourp.class)
@@ -95,6 +97,15 @@ public class TitlesShowServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
+            try {
+                target = em.createNamedQuery("getMyAllTargets", Target.class)
+                                        .setParameter("user", login_user)
+                                        .setParameter("title", users_title)
+                                        .getSingleResult();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         em.close();
 
         request.setAttribute("fourp", fourp);
@@ -102,6 +113,7 @@ public class TitlesShowServlet extends HttpServlet {
         request.setAttribute("threec", threec);
         request.setAttribute("pest", pest);
         request.setAttribute("seg", seg);
+        request.setAttribute("target", target);
         request.getSession().setAttribute("users_title", users_title);
 
         if(request.getSession().getAttribute("flush") != null) {

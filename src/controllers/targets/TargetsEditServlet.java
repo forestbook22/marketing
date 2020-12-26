@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Seg;
 import models.Target;
+import models.Title;
 import models.User;
 import utils.DBUtil;
 
@@ -36,12 +38,24 @@ public class TargetsEditServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
 
         Target tar = em.find(Target.class, Integer.parseInt(request.getParameter("id")));
+        User login_user = (User)request.getSession().getAttribute("login_user");
+        Title users_title = (Title)request.getSession().getAttribute("users_title");
 
+        Seg seg = null;
+
+        try {
+            seg = em.createNamedQuery("getMyAllSegs", Seg.class)
+                                    .setParameter("user", login_user)
+                                    .setParameter("title", users_title)
+                                    .getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         em.close();
 
-        User login_user = (User)request.getSession().getAttribute("login_user");
         if(tar != null && login_user.getId() == tar.getUser().getId()) {
             request.setAttribute("target", tar);
+            request.setAttribute("seg", seg);
             request.setAttribute("_token", request.getSession().getId());
             request.getSession().setAttribute("target_id", tar.getId());
         }

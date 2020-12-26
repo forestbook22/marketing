@@ -43,12 +43,32 @@ public class TargetsUpdateServlet extends HttpServlet {
 
             tar.setDate(Date.valueOf(request.getParameter("date")));
             tar.setFrame(request.getParameter("frame"));
-            tar.setReal(Integer.parseInt(request.getParameter("real")));
-            tar.setRate(Integer.parseInt(request.getParameter("rate")));
-            tar.setRank(Integer.parseInt(request.getParameter("rank")));
-            tar.setReach(Integer.parseInt(request.getParameter("reach")));
-            tar.setRival(Integer.parseInt(request.getParameter("rival")));
-            tar.setResponse(Integer.parseInt(request.getParameter("response")));
+            tar.setFrame(request.getParameter("frame"));
+            tar.setReal1(Integer.parseInt(request.getParameter("real1")));
+            tar.setRate1(Integer.parseInt(request.getParameter("rate1")));
+            tar.setRank1(Integer.parseInt(request.getParameter("rank1")));
+            tar.setReach1(Integer.parseInt(request.getParameter("reach1")));
+            tar.setRival1(Integer.parseInt(request.getParameter("rival1")));
+            tar.setResponse1(Integer.parseInt(request.getParameter("response1")));
+            tar.setReal2(Integer.parseInt(request.getParameter("real2")));
+            tar.setRate2(Integer.parseInt(request.getParameter("rate2")));
+            tar.setRank2(Integer.parseInt(request.getParameter("rank2")));
+            tar.setReach2(Integer.parseInt(request.getParameter("reach2")));
+            tar.setRival2(Integer.parseInt(request.getParameter("rival2")));
+            tar.setResponse2(Integer.parseInt(request.getParameter("response2")));
+            tar.setReal3(Integer.parseInt(request.getParameter("real3")));
+            tar.setRate3(Integer.parseInt(request.getParameter("rate3")));
+            tar.setRank3(Integer.parseInt(request.getParameter("rank3")));
+            tar.setReach3(Integer.parseInt(request.getParameter("reach3")));
+            tar.setRival3(Integer.parseInt(request.getParameter("rival3")));
+            tar.setResponse3(Integer.parseInt(request.getParameter("response3")));
+            tar.setReal4(Integer.parseInt(request.getParameter("real4")));
+            tar.setRate4(Integer.parseInt(request.getParameter("rate4")));
+            tar.setRank4(Integer.parseInt(request.getParameter("rank4")));
+            tar.setReach4(Integer.parseInt(request.getParameter("reach4")));
+            tar.setRival4(Integer.parseInt(request.getParameter("rival4")));
+            tar.setResponse4(Integer.parseInt(request.getParameter("response4")));
+            tar.setChoice(Integer.parseInt(request.getParameter("choice")));
             tar.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
             List<String> errors = TargetValidator.validate(tar);

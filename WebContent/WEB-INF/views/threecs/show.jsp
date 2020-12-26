@@ -14,10 +14,6 @@
                             <td><c:out value="${threec.user.name}" /></td>
                         </tr>
                         <tr>
-                            <th>Date</th>
-                            <td><fmt:formatDate value="${threec.date}" pattern="yyyy-MM-dd" /></td>
-                        </tr>
-                        <tr>
                             <th>Title</th>
                             <td><c:out value="${threec.title.title}" /></td>
                         </tr>

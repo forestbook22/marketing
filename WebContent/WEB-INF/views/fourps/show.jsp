@@ -14,10 +14,6 @@
                             <td><c:out value="${fourp.user.name}" /></td>
                         </tr>
                         <tr>
-                            <th>Date</th>
-                            <td><fmt:formatDate value="${fourp.date}" pattern="yyyy-MM-dd" /></td>
-                        </tr>
-                        <tr>
                             <th>Title</th>
                             <td><c:out value="${fourp.title.title}" /></td>
                         </tr>

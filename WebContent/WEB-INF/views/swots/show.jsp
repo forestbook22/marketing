@@ -14,10 +14,6 @@
                             <td><c:out value="${swot.user.name}" /></td>
                         </tr>
                         <tr>
-                            <th>Date</th>
-                            <td><fmt:formatDate value="${swot.date}" pattern="yyyy-MM-dd" /></td>
-                        </tr>
-                        <tr>
                             <th>Title</th>
                             <td><c:out value="${swot.title.title}" /></td>
                         </tr>

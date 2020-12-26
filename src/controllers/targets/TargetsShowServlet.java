@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Seg;
 import models.Target;
+import models.Title;
+import models.User;
 import utils.DBUtil;
 
 /**
@@ -34,11 +37,25 @@ public class TargetsShowServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
+        User login_user = (User)request.getSession().getAttribute("login_user");
+        Title users_title = (Title)request.getSession().getAttribute("users_title");
         Target tar = em.find(Target.class, Integer.parseInt(request.getParameter("id")));
+
+        Seg seg = null;
+
+        try {
+            seg = em.createNamedQuery("getMyAllSegs", Seg.class)
+                                    .setParameter("user", login_user)
+                                    .setParameter("title", users_title)
+                                    .getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         em.close();
 
         request.setAttribute("target", tar);
+        request.setAttribute("seg", seg);
         request.setAttribute("_token", request.getSession().getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/targets/show.jsp");

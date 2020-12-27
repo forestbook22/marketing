@@ -103,7 +103,7 @@ public class TargetsCreateServlet extends HttpServlet {
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
 
-                response.sendRedirect(request.getContextPath() + "/");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ tar.getTitle().getId());
             }
         }
     }

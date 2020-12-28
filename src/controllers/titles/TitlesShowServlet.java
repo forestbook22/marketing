@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Fourp;
 import models.Pest;
+import models.Position;
 import models.Seg;
 import models.Swot;
 import models.Target;
@@ -50,6 +51,7 @@ public class TitlesShowServlet extends HttpServlet {
         Pest pest = null;
         Seg seg = null;
         Target target = null;
+        Position position = null;
 
             try {
                 fourp = em.createNamedQuery("getMyAllFourps", Fourp.class)
@@ -106,6 +108,15 @@ public class TitlesShowServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
+            try {
+                position = em.createNamedQuery("getMyAllPositions", Position.class)
+                                        .setParameter("user", login_user)
+                                        .setParameter("title", users_title)
+                                        .getSingleResult();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         em.close();
 
         request.setAttribute("fourp", fourp);
@@ -114,6 +125,7 @@ public class TitlesShowServlet extends HttpServlet {
         request.setAttribute("pest", pest);
         request.setAttribute("seg", seg);
         request.setAttribute("target", target);
+        request.setAttribute("position", position);
         request.getSession().setAttribute("users_title", users_title);
 
         if(request.getSession().getAttribute("flush") != null) {

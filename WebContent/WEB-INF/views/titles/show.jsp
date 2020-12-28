@@ -74,6 +74,17 @@
                                 </c:otherwise>
                             </c:choose>
                         </tr>
+                        <tr>
+                            <th>Positioning</th>
+                            <c:choose>
+                                <c:when test="${position != null}">
+                                    <td><a href="<c:url value='/positions/show?id=${position.id}' />">詳細を表示</a></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td><a href="<c:url value="/positions/new"/>">新規登録</a></td>
+                                </c:otherwise>
+                            </c:choose>
+                        </tr>
                     </tbody>
                 </table>
                 <br>

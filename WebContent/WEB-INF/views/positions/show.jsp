@@ -41,6 +41,7 @@
                     <input type="file" name="file"/><br /><br />
                     <button type="submit">アップロード</button>
                 </form>
+                <img src = "/marketing/WEB-INF/uploaded/${position.user.id}_${position.title.id}.jpg"/>
                 <script>
                    window.onload=()=>{
                        const board = document.querySelector("#board");

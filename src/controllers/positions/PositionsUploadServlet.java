@@ -22,8 +22,9 @@ public class PositionsUploadServlet extends HttpServlet {
         Title users_title = (Title)request.getSession().getAttribute("users_title");
         request.setCharacterEncoding("UTF8");
         Part part = request.getPart("file");
-        part.write(getServletContext().getRealPath("/WebContent/WEB-INF/uploaded")
-                + "/" + login_user.getId() + "_" + users_title.getId() + ".jpg");
+        String img = getServletContext().getRealPath("/WEB-INF/uploaded")
+                + "/" + login_user.getId() + "_" + users_title.getId() + ".jpg";
+        part.write(img);
         response.sendRedirect(request.getContextPath() + "/positions/show?id=" + login_user.getId() );
     }
 }

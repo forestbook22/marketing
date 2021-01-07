@@ -47,6 +47,7 @@ public class ThreecsUpdateServlet extends HttpServlet {
             t.setCus(request.getParameter("cus"));
             t.setOwn(request.getParameter("own"));
             t.setCompe(request.getParameter("compe"));
+            t.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
             t.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
             List<String> errors = ThreecValidator.validate(t);

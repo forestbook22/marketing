@@ -47,6 +47,7 @@ public class FourpsUpdateServlet extends HttpServlet {
             f.setPrice(request.getParameter("price"));
             f.setPlace(request.getParameter("place"));
             f.setPromotion(request.getParameter("promotion"));
+            f.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
             f.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
             List<String> errors = FourpValidator.validate(f);

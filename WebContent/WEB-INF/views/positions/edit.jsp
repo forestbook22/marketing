@@ -4,7 +4,7 @@
     <c:param name="content">
         <c:choose>
             <c:when test="${position != null}">
-                <h2>4P　編集ページ</h2>
+                <h2>Positioning　編集ページ</h2>
                 <form method="POST" action="<c:url value='/positions/update' />">
                     <c:import url="_form.jsp" />
                 </form>

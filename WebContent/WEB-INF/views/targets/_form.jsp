@@ -282,8 +282,8 @@
         <br /><br />
 
         <select name="show_flag">
-            <option value="1"<c:if test="${target.show_flag == 0}"> selected</c:if>>公開</option>
-            <option value="2"<c:if test="${target.show_flag == 1}"> selected</c:if>>非公開</option>
+            <option value="0"<c:if test="${target.show_flag == 0}"> selected</c:if>>公開</option>
+            <option value="1"<c:if test="${target.show_flag == 1}"> selected</c:if>>非公開</option>
         </select>
         <br /><br />
 

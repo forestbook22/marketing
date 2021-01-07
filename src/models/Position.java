@@ -30,6 +30,30 @@ import javax.persistence.Table;
 public class Position extends Framework {
 
     @Lob
+    @Column(name = "attri", nullable = false)
+    private String attri;
+
+    @Lob
+    @Column(name = "distance", nullable = false)
+    private String distance;
+
+    @Lob
+    @Column(name = "benefit", nullable = false)
+    private String benefit;
+
+    @Lob
+    @Column(name = "opp", nullable = false)
+    private String opp;
+
+    @Lob
+    @Column(name = "relation", nullable = false)
+    private String relation;
+
+    @Lob
+    @Column(name = "kind", nullable = false)
+    private String kind;
+
+    @Lob
     @Column(name = "x", nullable = false)
     private String x;
 
@@ -53,6 +77,53 @@ public class Position extends Framework {
     @Column(name = "y2", nullable = false)
     private String y2;
 
+    public String getAttri() {
+        return attri;
+    }
+
+    public void setAttri(String attri) {
+        this.attri = attri;
+    }
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
+
+    public String getBenefit() {
+        return benefit;
+    }
+
+    public void setBenefit(String benefit) {
+        this.benefit = benefit;
+    }
+
+    public String getOpp() {
+        return opp;
+    }
+
+    public void setOpp(String opp) {
+        this.opp = opp;
+    }
+
+    public String getRelation() {
+        return relation;
+    }
+
+    public void setRelation(String relation) {
+        this.relation = relation;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
 
     public String getX() {
         return x;

@@ -9,6 +9,36 @@ public class PositionValidator {
     public static List<String> validate(Position po) {
         List<String> errors = new ArrayList<String>();
 
+        String attri_error = _validateAttri(po.getAttri());
+        if(!attri_error.equals("")) {
+            errors.add(attri_error);
+        }
+
+        String benefit_error = _validateBenefit(po.getBenefit());
+        if(!benefit_error.equals("")) {
+            errors.add(benefit_error);
+        }
+
+        String opp_error = _validateOpp(po.getOpp());
+        if(!opp_error.equals("")) {
+            errors.add(opp_error);
+        }
+
+        String relation_error = _validateRelation(po.getRelation());
+        if(!relation_error.equals("")) {
+            errors.add(relation_error);
+        }
+
+        String distance_error = _validateDistance(po.getDistance());
+        if(!distance_error.equals("")) {
+            errors.add(distance_error);
+        }
+
+        String kind_error = _validateKind(po.getKind());
+        if(!kind_error.equals("")) {
+            errors.add(kind_error);
+        }
+
         String x_error = _validateX(po.getX());
         if(!x_error.equals("")) {
             errors.add(x_error);
@@ -41,6 +71,50 @@ public class PositionValidator {
         return errors;
     }
 
+    private static String _validateAttri(String attri) {
+        if(attri == null || attri.equals("")) {
+            return "製品属性の内容を入力してください。";
+            }
+
+        return "";
+    }
+
+    private static String _validateBenefit(String benefit) {
+        if(benefit == null || benefit.equals("")) {
+            return "ベネフィットの内容を入力してください。";
+            }
+
+        return "";
+    }
+
+    private static String _validateOpp(String opp) {
+        if(opp == null || opp.equals("")) {
+            return "機会の内容を入力してください。";
+            }
+
+        return "";
+    }
+    private static String _validateRelation(String relation) {
+        if(relation == null || relation.equals("")) {
+            return "関係の内容を入力してください。";
+            }
+
+        return "";
+    }
+    private static String _validateDistance(String distance) {
+        if(distance == null || distance.equals("")) {
+            return "距離の細分化の内容を入力してください。";
+            }
+
+        return "";
+    }
+    private static String _validateKind(String kind) {
+        if(kind == null || kind.equals("")) {
+            return "種類の内容を入力してください。";
+            }
+
+        return "";
+    }
     private static String _validateX(String x) {
         if(x == null || x.equals("")) {
             return "①の内容を入力してください。";

@@ -42,6 +42,14 @@ public class PositionsUpdateServlet extends HttpServlet {
             Position po = em.find(Position.class, (Integer)(request.getSession().getAttribute("position_id")));
 
             po.setDate(Date.valueOf(request.getParameter("date")));
+            po.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
+            po.setAttri(request.getParameter("attri"));
+            po.setBenefit(request.getParameter("benefit"));
+            po.setOpp(request.getParameter("opp"));
+            po.setRelation(request.getParameter("relation"));
+            po.setDistance(request.getParameter("distance"));
+            po.setKind(request.getParameter("kind"));
+            po.setKind(request.getParameter("kind"));
             po.setX(request.getParameter("x"));
             po.setY(request.getParameter("y"));
             po.setX1(request.getParameter("x1"));

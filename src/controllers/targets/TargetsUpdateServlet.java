@@ -43,7 +43,6 @@ public class TargetsUpdateServlet extends HttpServlet {
 
             tar.setDate(Date.valueOf(request.getParameter("date")));
             tar.setFrame(request.getParameter("frame"));
-            tar.setFrame(request.getParameter("frame"));
             tar.setReal1(Integer.parseInt(request.getParameter("real1")));
             tar.setRate1(Integer.parseInt(request.getParameter("rate1")));
             tar.setRank1(Integer.parseInt(request.getParameter("rank1")));
@@ -69,6 +68,7 @@ public class TargetsUpdateServlet extends HttpServlet {
             tar.setRival4(Integer.parseInt(request.getParameter("rival4")));
             tar.setResponse4(Integer.parseInt(request.getParameter("response4")));
             tar.setChoice(Integer.parseInt(request.getParameter("choice")));
+            tar.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
             tar.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
             List<String> errors = TargetValidator.validate(tar);

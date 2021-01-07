@@ -43,6 +43,7 @@ public class SwotsUpdateServlet extends HttpServlet {
             Swot s = em.find(Swot.class, (Integer)(request.getSession().getAttribute("swot_id")));
 
             s.setDate(Date.valueOf(request.getParameter("date")));
+            s.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
             s.setFrame(request.getParameter("frame"));
             s.setStrong(request.getParameter("strong"));
             s.setWeak(request.getParameter("weak"));

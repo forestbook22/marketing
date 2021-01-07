@@ -42,6 +42,7 @@ public class PestsUpdateServlet extends HttpServlet {
             Pest p = em.find(Pest.class, (Integer)(request.getSession().getAttribute("pest_id")));
 
             p.setDate(Date.valueOf(request.getParameter("date")));
+            p.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
             p.setFrame(request.getParameter("frame"));
             p.setPoli(request.getParameter("poli"));
             p.setEco(request.getParameter("eco"));

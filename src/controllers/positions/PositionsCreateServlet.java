@@ -54,6 +54,12 @@ public class PositionsCreateServlet extends HttpServlet {
             }
             po.setDate(date);
             po.setFrame(request.getParameter("frame"));
+            po.setAttri(request.getParameter("attri"));
+            po.setBenefit(request.getParameter("benefit"));
+            po.setOpp(request.getParameter("opp"));
+            po.setRelation(request.getParameter("relation"));
+            po.setDistance(request.getParameter("distance"));
+            po.setKind(request.getParameter("kind"));
             po.setX(request.getParameter("x"));
             po.setY(request.getParameter("y"));
             po.setX1(request.getParameter("x1"));

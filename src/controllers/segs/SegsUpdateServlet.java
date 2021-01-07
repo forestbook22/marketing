@@ -43,6 +43,7 @@ public class SegsUpdateServlet extends HttpServlet {
 
             se.setDate(Date.valueOf(request.getParameter("date")));
             se.setFrame(request.getParameter("frame"));
+            se.setShow_flag(Integer.parseInt(request.getParameter("show_flag")));
             se.setX(Integer.parseInt(request.getParameter("x")));
             se.setX1(request.getParameter("x1"));
             se.setX2(request.getParameter("x2"));

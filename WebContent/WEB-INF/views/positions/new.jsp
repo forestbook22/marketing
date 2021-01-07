@@ -4,7 +4,7 @@
     <c:param name="content">
         <h2>Positioning　新規登録ページ</h2>
 
-        <form method="POST" action="<c:url value='/positions/create' />">
+        <form method="POST" action="<c:url value='/positions/create' />" id = "form">
             <c:import url="_form.jsp" />
         </form>
         <p><a href="<c:url value='/' />">タイトル一覧に戻る</a></p>

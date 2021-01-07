@@ -66,13 +66,6 @@
         <input type = text name="y2" value = "${position.y2}">
         <br /><br />
 
-        <p>STEP1:設定した軸をもとに<a href="<c:url value='https://www.positioning-map.com/' />">ポジショニングマップ</a>を作成</p>
-        <p>STEP2:スクリーンショットを取り、アップロード</p>
-        <form method="POST" enctype="multipart/form-data" action="<c:url value='/positions/upload' />">
-            <input type="file" name="file"/><br /><br />
-            <button type="submit">アップロード</button>
-        </form>
-
         <select name="show_flag">
             <option value="0"<c:if test="${position.show_flag == 0}"> selected</c:if>>公開</option>
             <option value="1"<c:if test="${position.show_flag == 1}"> selected</c:if>>非公開</option>

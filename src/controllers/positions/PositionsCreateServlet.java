@@ -88,9 +88,9 @@ public class PositionsCreateServlet extends HttpServlet {
                 em.persist(po);
                 em.getTransaction().commit();
                 em.close();
-                request.getSession().setAttribute("flush", "登録が完了しました。");
 
-                response.sendRedirect(request.getContextPath() + "/");
+                response.sendRedirect(request.getContextPath() + "/positions/img?id="+ po.getTitle().getId());
+
             }
         }
     }

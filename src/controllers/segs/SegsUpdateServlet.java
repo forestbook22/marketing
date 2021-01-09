@@ -74,7 +74,7 @@ public class SegsUpdateServlet extends HttpServlet {
 
                 request.getSession().removeAttribute("seg_id");
 
-                response.sendRedirect(request.getContextPath() + "/segs/index");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ se.getTitle().getId());
             }
         }
     }

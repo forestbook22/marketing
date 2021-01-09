@@ -69,7 +69,7 @@ public class SwotsUpdateServlet extends HttpServlet {
 
                 request.getSession().removeAttribute("swot_id");
 
-                response.sendRedirect(request.getContextPath() + "/swots/index");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ s.getTitle().getId());
             }
         }
     }

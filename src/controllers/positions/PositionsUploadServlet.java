@@ -43,6 +43,8 @@ public class PositionsUploadServlet extends HttpServlet {
         String img = "/workspace/marketing/WebContent/uploaded"
                 + "/" + login_user.getId() + "_" + users_title.getId() + ".jpg";
         part.write(img);
-        response.sendRedirect(request.getContextPath() + "/positions/show?id=" + position.getId() );
+        request.getSession().setAttribute("flush", "登録が完了しました。");
+
+        response.sendRedirect(request.getContextPath() + "/titles/show?id=" + position.getTitle().getId() );
     }
 }

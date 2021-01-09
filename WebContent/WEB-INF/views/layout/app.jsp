@@ -4,7 +4,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>マーケティングチェッカ―</title>
+        <title>フレームワークチェッカ―</title>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
@@ -12,18 +12,32 @@
         <div id="wrapper">
             <div id="header">
                 <div id="header_menu">
-                    <h1><a href="<c:url value='/' />">Marketing Checker</a></h1>&nbsp;&nbsp;&nbsp;
+                    <h1><a href="<c:url value='/' />">Framework Checker</a></h1>&nbsp;&nbsp;&nbsp;
                     <c:if test="${sessionScope.login_user != null}">
                         <c:if test="${sessionScope.login_user.admin_flag == 1}">
                             <a href="<c:url value='/users/index' />">User</a>&nbsp;
                         </c:if>
-                        <a href="<c:url value='/fourps/index' />">4P</a>&nbsp;
-                        <a href="<c:url value='/swots/index' />">SWOT</a>&nbsp;
-                        <a href="<c:url value='/threecs/index' />">3C</a>&nbsp;
-                        <a href="<c:url value='/pests/index' />">PEST</a>&nbsp;
-                        <a href="<c:url value='/segs/index' />">Segmentation</a>&nbsp;
-                        <a href="<c:url value='/targets/index' />">Targeting</a>&nbsp;
-                        <a href="<c:url value='/positions/index' />">Positioning</a>&nbsp;
+                        <select name="select" onChange="location.href=value;" id = "menu">
+                          <option value="#">戦略立案フレームワーク</option>
+                          <option value="/marketing/pests/index">PEST分析</option>
+                          <option value="/marketing/threecs/index">3C分析</option>
+                          <option value="/marketing/swots/index">SWOT分析</option>
+                          <option value="/marketing/segs/index">Segmentation</option>
+                          <option value="/marketing/targets/index">Targeting</option>
+                          <option value="marketing/positions/index">Positioning</option>
+                          <option value="marketing/fourps/index">4P分析</option>
+                        </select>&nbsp;
+                        <select name="select" onChange="location.href=value;" id = "menu">
+                          <option value="#">思考整理フレームワーク</option>
+                          <option value="/"></option>
+                          <option value="/"></option>
+                          <option value="/"></option>
+                          <option value="/"></option>
+                          <option value="/"></option>
+                        </select>&nbsp;
+
+                        <a href="<c:url value='/' />">使い方</a>&nbsp;
+                        <a href="<c:url value='/' />">FAQ</a>&nbsp;
                     </c:if>
                 </div>
                 <c:if test="${sessionScope.login_user != null}">

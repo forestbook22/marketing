@@ -68,7 +68,7 @@ public class FourpsUpdateServlet extends HttpServlet {
 
                 request.getSession().removeAttribute("fourp_id");
 
-                response.sendRedirect(request.getContextPath() + "/fourps/index");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ f.getTitle().getId());
             }
         }
     }

@@ -24,19 +24,19 @@
 <c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
-<label for="product">Product:　企業の利益の源泉となる商品（品質・デザイン・ブランド名）は？</label><br />
+<label for="product">Product:「${choice}」に対し最も売上が見込め、企業の利益の源泉となる商品（品質・デザイン・ブランド名）は？</label><br />
 <textarea name="product" rows="1" cols="50">${fourp.product}</textarea>
 <br /><br />
 
-<label for="price">Price:　競合と比較したときの価格帯は？</label><br />
+<label for="price">Price:競合と比較したときの選択すべき価格帯は？</label><br />
 <textarea name="price" rows="1" cols="50">${fourp.price}</textarea>
 <br /><br />
 
-<label for="place">Place:　製品を市場に流通させるための販売経路・場所は？</label><br />
+<label for="place">Place:「${choice}」に対し最も有効な販売経路・場所は？</label><br />
 <textarea name="place" rows="1" cols="50">${fourp.place}</textarea>
 <br /><br />
 
-<label for="promotion">Promotion:　顧客に認知してもらう方法は？</label><br />
+<label for="promotion">Promotion:「${choice}」に認知してもらう最も効果的な方法は？</label><br />
 <textarea name="promotion" rows="1" cols="50">${fourp.promotion}</textarea>
 <br /><br />
 

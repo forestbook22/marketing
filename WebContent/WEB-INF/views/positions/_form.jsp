@@ -73,7 +73,7 @@
         <br /><br />
 
         <input type="hidden" name="_token" value="${_token}" />
-        <button type="submit">登録</button>
+        <button type="submit">次へ</button>
     </c:when>
     <c:otherwise>
         <p><a href="<c:url value='/titles/show?id=${sessionScope.users_title.id}' />">Targeting</a>を入力してください</p>

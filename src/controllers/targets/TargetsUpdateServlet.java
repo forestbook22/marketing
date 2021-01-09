@@ -89,7 +89,7 @@ public class TargetsUpdateServlet extends HttpServlet {
 
                 request.getSession().removeAttribute("target_id");
 
-                response.sendRedirect(request.getContextPath() + "/targets/index");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ tar.getTitle().getId());
             }
         }
     }

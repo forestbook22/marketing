@@ -33,7 +33,7 @@
                 </table>
                 <br>
                 <div id="canvas_wrapper">
-                <canvas id="board" width="1000" height="450"></canvas>
+                    <canvas id="board" width="1000" height="450"></canvas>
                 </div>
                     <script>
                     window.onload=()=>{

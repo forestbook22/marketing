@@ -72,11 +72,10 @@ public class PositionsUpdateServlet extends HttpServlet {
                 em.getTransaction().begin();
                 em.getTransaction().commit();
                 em.close();
-                request.getSession().setAttribute("flush", "更新が完了しました。");
 
                 request.getSession().removeAttribute("position_id");
 
-                response.sendRedirect(request.getContextPath() + "/positions/index");
+                response.sendRedirect(request.getContextPath() + "/positions/img?id="+ po.getTitle().getId());
             }
         }
     }

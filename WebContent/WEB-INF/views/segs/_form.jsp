@@ -24,6 +24,8 @@
 <c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
+<img src = "../picture/seg.png"/><br />
+<p>STEP1:ニーズの違いが明確に分かれそうな変数を上から2つ選び、軸を選定</p>
 変数は
 <select name="y">
     <option value="0"<c:if test="${seg.y == 0}"> selected</c:if>>地方</option>
@@ -61,7 +63,7 @@
 で、セグメンテーションは③<input type="text" name="x1" value="${seg.x1}" />
 と④<input type="text" name="x2" value="${seg.x2}" />
 <br /><br />
-
+<p>STEP2:選んだセグメンテーションで4象限を作る</p>
 <label for="one">第1象限:　①と④の特徴を持つ人に名前を付けるとしたら？？</label><br />
 <textarea name="one" rows="1" cols="50">${seg.one}</textarea>
 <br /><br />

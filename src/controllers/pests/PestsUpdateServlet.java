@@ -68,7 +68,7 @@ public class PestsUpdateServlet extends HttpServlet {
 
                 request.getSession().removeAttribute("pest_id");
 
-                response.sendRedirect(request.getContextPath() + "/pests/index");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ p.getTitle().getId());
             }
         }
     }

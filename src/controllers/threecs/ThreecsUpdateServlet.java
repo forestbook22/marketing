@@ -68,7 +68,7 @@ public class ThreecsUpdateServlet extends HttpServlet {
 
                 request.getSession().removeAttribute("threec_id");
 
-                response.sendRedirect(request.getContextPath() + "/threecs/index");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ t.getTitle().getId());
             }
         }
     }

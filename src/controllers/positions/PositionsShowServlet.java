@@ -40,6 +40,7 @@ public class PositionsShowServlet extends HttpServlet {
 
         request.setAttribute("position", po) ;
         request.setAttribute("_token", request.getSession().getId());
+        request.getSession().removeAttribute("flush");
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/positions/show.jsp");
         rd.forward(request, response);

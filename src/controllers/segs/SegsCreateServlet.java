@@ -88,7 +88,7 @@ public class SegsCreateServlet extends HttpServlet {
                 em.close();
                 request.getSession().setAttribute("flush", "登録が完了しました。");
 
-                response.sendRedirect(request.getContextPath() + "/");
+                response.sendRedirect(request.getContextPath() + "/titles/show?id="+ se.getTitle().getId());
             }
         }
     }

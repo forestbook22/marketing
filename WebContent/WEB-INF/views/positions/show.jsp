@@ -35,14 +35,8 @@
                 <div id="canvas_wrapper">
                    <canvas id="board" width="1000" height="500"></canvas>
                 </div>
-                <p>STEP1:設定した軸をもとに<a href="<c:url value='https://www.positioning-map.com/' />">ポジショニングマップ</a>を作成</p>
-                <p>STEP2:スクリーンショットを取り、アップロード</p>
-                <form method="POST" enctype="multipart/form-data" action="<c:url value='/positions/upload' />">
-                    <input type="file" name="file"/><br /><br />
-                    <button type="submit">アップロード</button>
-                </form>
-                <p>注：更新されない場合は画面左上の更新ボタンを押してください</p>
                 <img src = "../uploaded/${position.user.id}_${position.title.id}.jpg"/>
+                 <p>注：更新されない場合は画面左上の更新ボタンを押してください</p>
                 <script>
                    window.onload=()=>{
                        const board = document.querySelector("#board");

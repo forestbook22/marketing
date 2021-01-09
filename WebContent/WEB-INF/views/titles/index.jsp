@@ -8,7 +8,7 @@
                 <c:out value="${flush}"></c:out>
             </div>
         </c:if>
-        <h2>Title　一覧</h2>
+        <h2>戦略立案</h2>
         <table id = "title_list">
             <tbody>
                 <tr>
@@ -37,7 +37,17 @@
                 </c:choose>
             </c:forEach>
         </div>
-        <p><a href="<c:url value='/titles/new' />">新規タイトルの登録</a></p>
+        <p><a href="<c:url value='/titles/new' />">新規タイトルの登録</a></p><br/>
+
+        <h2>思考整理（作成中...）</h2>
+        <table id = "title_list">
+            <tbody>
+                <tr>
+                    <th class="title_title">Title</th>
+                    <th class="title_action">Action</th>
+                </tr>
+            </tbody>
+        </table>
 
     </c:param>
 </c:import>

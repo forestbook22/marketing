@@ -153,9 +153,12 @@
                             <canvas id="position" width="1000" height="500"></canvas>
                         </div>
                         <br />
-                        <img src = "../uploaded/${position.user.id}_${position.title.id}.jpg"/>
+                        <div id = "map">
+                            <img src = "../uploaded/${position.user.id}_${position.title.id}.jpg"/>
+                        </div>
                         <br />
                         <p>注：更新されない場合は画面左上の更新ボタンを押してください</p>
+                        <p>(それでも表示されない場合はキャッシュの消去とハード再読み込みをしてください)</p>
                     </c:when>
                 </c:choose>
                 <table>

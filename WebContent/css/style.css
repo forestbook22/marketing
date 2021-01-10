@@ -325,4 +325,6 @@ table#target .rival {
 table#target .response {
     width:13%;
 }
-
+#map{
+    text-align:center;
+}

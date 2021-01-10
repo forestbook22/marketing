@@ -39,6 +39,7 @@
                    window.onload=()=>{
                        const board = document.querySelector("#board");
                        const ctx = board.getContext("2d");
+
                        //Politics
                        ctx.beginPath();
                        ctx.fillStyle = "#CC99CC"
@@ -89,9 +90,47 @@
                        ctx.fillText("(経済)", 810, 50);
                        ctx.fillText("(社会)", 790, 300);
                        ctx.fillText("(技術)", 330, 300);
+
+                       //入力文字表示
+
+                       var str = function(variable, x, y) {
+                           var row_string_cnt = 20; //一行あたりの文字数
+                           //横幅と1行あたりの文字数から、文字サイズを算出
+                             var font_size = Math.round(500 / row_string_cnt);
+                           //入力文字を1文字毎に配列化
+                           var aryText = variable.split('');
+                           //出力用の配列を用意
+                           var aryRow = [];
+                           aryRow[0] = '';
+                           var row_cnt = 0;
+                         //入力1文字毎にループ　改行コードもしくは折り返しで配列の添え字を足す
+                           for(var i = 0; i < aryText.length; i++){
+                               var text = aryText[i];
+                               if(aryRow[row_cnt].length >= row_string_cnt){
+                                   row_cnt++;
+                                   aryRow[row_cnt] = '';
+                               }
+                               if(text == "\r\n"){
+                                   row_cnt++;
+                                   aryRow[row_cnt] = '';
+                                   text = '';
+                               }
+                               aryRow[row_cnt] += text;
+                           }
+                         //文字の表示　y軸とx軸をループする
+                           for(var i = 0; i < aryRow.length; i++){
+                               aryStr = aryRow[i].split('');
+                               for(var j = 0; j < aryStr.length; j++){
+                                   ctx.fillText(aryStr[j], x + (j * font_size), y + (i * font_size) + 10);
+                               }
+                           }
+
+                         };
+                       ctx.beginPath();
+                       ctx.textAlign = 'left';
                        ctx.font = "30px 'sans-serif'";
                        ctx.fillStyle="black";
-                       ctx.fillText("${pest.poli}", (500 - ctx.measureText( "${pest.poli}" ).width) / 2, 125, 400,150);
+                       str("${pest.poli}", 20, 125);
                        ctx.fillText("${pest.eco}",  (1500 - ctx.measureText( "${pest.eco}" ).width) / 2, 125, 400,150);
                        ctx.fillText("${pest.soci}" , (1500 - ctx.measureText("${pest.soci}").width) / 2, 375, 400,150);
                        ctx.fillText("${pest.tech}",  (500 - ctx.measureText("${pest.tech}").width) / 2, 375, 400,150);

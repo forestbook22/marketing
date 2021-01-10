@@ -26,7 +26,7 @@
 <br /><br />
 
 <label for="poli">Politics:　商品・戦略に関係する政治的な制度などの変化は？</label><br />
-<textarea name="poli" rows="1" cols="50">${pest.poli}</textarea>
+<textarea name="poli" rows="1" cols="50" wrap = "hard">${pest.poli}</textarea>
 <br /><br />
 
 <label for="eco">Economy:　商品・戦略に関係する経済・金融的変化は？</label><br />

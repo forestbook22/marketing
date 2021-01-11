@@ -54,19 +54,15 @@
                        //Product
                        ctx.fillText("Product", 200, 50);
                        ctx.strokeRect(55,55,400,150);
-                       ctx.fillText("${fourp.product}", (500 - ctx.measureText( "${fourp.product}" ).width) / 2, 125, 400,150);
                        //Price
                        ctx.fillText("Price", 720, 50);
                        ctx.strokeRect(555,55,400,150);
-                       ctx.fillText("${fourp.price}",  (1500 - ctx.measureText( "${fourp.price}" ).width) / 2, 125, 400,150);
                        //Place
                        ctx.fillText("Place", 200, 300);
                        ctx.strokeRect(55,305,400,150);
-                       ctx.fillText("${fourp.place}",  (500 - ctx.measureText("${fourp.place}").width) / 2, 375, 400,150);
                        //Promotion
                        ctx.fillText("Promotion", 680, 300);
                        ctx.strokeRect(555,305,400,150);
-                       ctx.fillText("${fourp.promotion}" , (1500 - ctx.measureText("${fourp.promotion}").width) / 2, 375, 400,150);
                        ctx.stroke();
                        //真ん中
                        ctx.beginPath();
@@ -105,6 +101,48 @@
                        ctx.lineTo(500, 350);
                        ctx.lineWidth = 1;
                        ctx.stroke();
+                       var str = function(variable, x, y) {
+                           var row_string_cnt =16; //一行あたりの文字数
+                           //横幅と1行あたりの文字数から、文字サイズを算出
+                             var font_size = Math.round(380 / row_string_cnt);
+                           //入力文字を1文字毎に配列化
+                           var aryText = variable.split('');
+                           //出力用の配列を用意
+                           var aryRow = [];
+                           aryRow[0] = '';
+                           var row_cnt = 0;
+                         //入力1文字毎にループ　改行コードもしくは折り返しで配列の添え字を足す
+                           for(var i = 0; i < aryText.length; i++){
+                               var text = aryText[i];
+                               if(aryRow[row_cnt].length >= row_string_cnt){
+                                   row_cnt++;
+                                   aryRow[row_cnt] = '';
+                               }
+                               if(text == "z"){
+                                   row_cnt++;
+                                   aryRow[row_cnt] = '';
+                                   text = '';
+                               }
+                               aryRow[row_cnt] += text;
+                           }
+                         //文字の表示　y軸とx軸をループする
+                           for(var i = 0; i < aryRow.length; i++){
+                               aryStr = aryRow[i].split('');
+                               for(var j = 0; j < aryStr.length; j++){
+                                   ctx.fillText(aryStr[j], x + (j * font_size), y + (i * (font_size + 5)) + 10);
+                               }
+                           }
+
+                         };
+                       ctx.beginPath();
+                       ctx.textAlign = 'left';
+                       ctx.font = "25px 'px meiryo'";
+                       ctx.fillStyle="black";
+                       str("${product}", 70, 85);
+                       str( "${price}", 570, 85)
+                       str( "${place}", 570, 345);
+                       str( "${promotion}", 70, 345);
+                       ctx.fill();
                     }
                    </script>
                 <c:if test="${sessionScope.login_user.id == fourp.user.id}">

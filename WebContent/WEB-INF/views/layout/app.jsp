@@ -27,15 +27,6 @@
                           <option value="marketing/positions/index">Positioning</option>
                           <option value="marketing/fourps/index">4P分析</option>
                         </select>&nbsp;
-                        <select name="select" onChange="location.href=value;" id = "menu">
-                          <option value="#">思考整理フレームワーク</option>
-                          <option value="/"></option>
-                          <option value="/"></option>
-                          <option value="/"></option>
-                          <option value="/"></option>
-                          <option value="/"></option>
-                        </select>&nbsp;
-
                         <a href="<c:url value='/' />">使い方</a>&nbsp;
                         <a href="<c:url value='/' />">FAQ</a>&nbsp;
                     </c:if>

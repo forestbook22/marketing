@@ -25,19 +25,19 @@
 <br /><br />
 
 <label for="product">Product:「${choice}」に対し最も売上が見込め、企業の利益の源泉となる商品（品質・デザイン・ブランド名）は？</label><br />
-<textarea name="product" rows="1" cols="50">${fourp.product}</textarea>
+<textarea name="product" rows="4" cols="30">${fourp.product}</textarea>
 <br /><br />
 
 <label for="price">Price:競合と比較したときの選択すべき価格帯は？</label><br />
-<textarea name="price" rows="1" cols="50">${fourp.price}</textarea>
+<textarea name="price" rows="4" cols="30">${fourp.price}</textarea>
 <br /><br />
 
 <label for="place">Place:「${choice}」に対し最も有効な販売経路・場所は？</label><br />
-<textarea name="place" rows="1" cols="50">${fourp.place}</textarea>
+<textarea name="place" rows="4" cols="30">${fourp.place}</textarea>
 <br /><br />
 
 <label for="promotion">Promotion:「${choice}」に認知してもらう最も効果的な方法は？</label><br />
-<textarea name="promotion" rows="1" cols="50">${fourp.promotion}</textarea>
+<textarea name="promotion" rows="4" cols="30">${fourp.promotion}</textarea>
 <br /><br />
 
 <select name="show_flag">

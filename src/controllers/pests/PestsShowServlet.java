@@ -38,6 +38,35 @@ public class PestsShowServlet extends HttpServlet {
 
         em.close();
 
+        String poli1 = p.getPoli();
+        if(poli1.indexOf("\r\n") >= 1){
+            String poli2 = poli1.replace("\r\n", "z");
+            request.setAttribute("poli", poli2);
+        }else{
+            request.setAttribute("poli", p.getPoli());
+        }
+        String eco1 = p.getEco();
+        if(eco1.indexOf("\r\n") >= 1){
+            String eco2 = eco1.replace("\r\n", "z");
+            request.setAttribute("eco", eco2);
+        }else{
+            request.setAttribute("eco", p.getEco());
+        }
+        String soci1 = p.getSoci();
+        if(soci1.indexOf("\r\n") >= 1){
+            String soci2 = soci1.replace("\r\n", "z");
+            request.setAttribute("soci", soci2);
+        }else{
+            request.setAttribute("soci", p.getSoci());
+        }
+        String tech1 = p.getTech();
+        if(tech1.indexOf("\r\n") >= 1){
+            String tech2 = tech1.replace("\r\n", "z");
+            request.setAttribute("tech", tech2);
+        }else{
+            request.setAttribute("tech", p.getTech());
+        }
+
         request.setAttribute("pest", p);
         request.setAttribute("_token", request.getSession().getId());
 

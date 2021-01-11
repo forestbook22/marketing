@@ -38,6 +38,34 @@ public class SwotShowServlet extends HttpServlet {
 
         em.close();
 
+        String strong1 = s.getStrong();
+        if(strong1.indexOf("\r\n") >= 1){
+            String strong2 = strong1.replace("\r\n", "z");
+            request.setAttribute("strong", strong2);
+        }else{
+            request.setAttribute("strong", s.getStrong());
+        }
+        String weak1 = s.getWeak();
+        if(weak1.indexOf("\r\n") >= 1){
+            String weak2 = weak1.replace("\r\n", "z");
+            request.setAttribute("weak", weak2);
+        }else{
+            request.setAttribute("weak", s.getWeak());
+        }
+        String opp1 = s.getOpp();
+        if(opp1.indexOf("\r\n") >= 1){
+            String opp2 = opp1.replace("\r\n", "z");
+            request.setAttribute("opp", opp2);
+        }else{
+            request.setAttribute("opp", s.getOpp());
+        }
+        String thre1 = s.getThre();
+        if(thre1.indexOf("\r\n") >= 1){
+            String thre2 = thre1.replace("\r\n", "z");
+            request.setAttribute("thre", thre2);
+        }else{
+            request.setAttribute("thre", s.getThre());
+        }
         request.setAttribute("swot", s);
         request.setAttribute("_token", request.getSession().getId());
 

@@ -94,9 +94,9 @@
                        //入力文字表示
 
                        var str = function(variable, x, y) {
-                           var row_string_cnt = 20; //一行あたりの文字数
+                           var row_string_cnt =18; //一行あたりの文字数
                            //横幅と1行あたりの文字数から、文字サイズを算出
-                             var font_size = Math.round(500 / row_string_cnt);
+                             var font_size = Math.round(450 / row_string_cnt);
                            //入力文字を1文字毎に配列化
                            var aryText = variable.split('');
                            //出力用の配列を用意
@@ -110,7 +110,7 @@
                                    row_cnt++;
                                    aryRow[row_cnt] = '';
                                }
-                               if(text == "\r\n"){
+                               if(text == "z"){
                                    row_cnt++;
                                    aryRow[row_cnt] = '';
                                    text = '';
@@ -121,19 +121,19 @@
                            for(var i = 0; i < aryRow.length; i++){
                                aryStr = aryRow[i].split('');
                                for(var j = 0; j < aryStr.length; j++){
-                                   ctx.fillText(aryStr[j], x + (j * font_size), y + (i * font_size) + 10);
+                                   ctx.fillText(aryStr[j], x + (j * font_size), y + (i * (font_size + 5)) + 10);
                                }
                            }
 
                          };
                        ctx.beginPath();
                        ctx.textAlign = 'left';
-                       ctx.font = "30px 'sans-serif'";
+                       ctx.font = "25px 'px meiryo'";
                        ctx.fillStyle="black";
-                       str("${pest.poli}", 20, 125);
-                       ctx.fillText("${pest.eco}",  (1500 - ctx.measureText( "${pest.eco}" ).width) / 2, 125, 400,150);
-                       ctx.fillText("${pest.soci}" , (1500 - ctx.measureText("${pest.soci}").width) / 2, 375, 400,150);
-                       ctx.fillText("${pest.tech}",  (500 - ctx.measureText("${pest.tech}").width) / 2, 375, 400,150);
+                       str("${poli}", 20, 125);
+                       str( "${eco}", 520, 125)
+                       str( "${soci}", 520, 375);
+                       str( "${tech}", 20, 375);
                        ctx.fill();
 
                        ctx.beginPath();

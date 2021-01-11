@@ -19,26 +19,26 @@
 <br />
 
 <label for="frame"></label><br />
-<input type="hidden" name="frame" value="4P" />
+<input type="hidden" name="frame" value="PEST" />
 
 <label for="title">タイトル</label><br />
 <c:out value="${sessionScope.users_title.title}" />
 <br /><br />
 
 <label for="poli">Politics:　商品・戦略に関係する政治的な制度などの変化は？</label><br />
-<textarea name="poli" rows="1" cols="50" wrap = "hard">${pest.poli}</textarea>
+<textarea name="poli" rows="4" cols="40" wrap ="hard">${pest.poli}</textarea>
 <br /><br />
 
 <label for="eco">Economy:　商品・戦略に関係する経済・金融的変化は？</label><br />
-<textarea name="eco" rows="1" cols="50">${pest.eco}</textarea>
+<textarea name="eco" rows="4" cols="40">${pest.eco}</textarea>
 <br /><br />
 
 <label for="soci">Society:　商品・戦略に関係する社会や人々の考え方の変化は？</label><br />
-<textarea name="soci" rows="1" cols="50">${pest.soci}</textarea>
+<textarea name="soci" rows="4" cols="40">${pest.soci}</textarea>
 <br /><br />
 
 <label for="tech">Technology:　商品・戦略に関する技術の変化や最近のトレンドは？</label><br />
-<textarea name="tech" rows="1" cols="50">${pest.tech}</textarea>
+<textarea name="tech" rows="4" cols="40">${pest.tech}</textarea>
 <br /><br />
 
 <select name="show_flag">

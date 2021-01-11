@@ -20,34 +20,34 @@
         <br />
 
         <label for="frame"></label><br />
-        <input type="hidden" name="frame" value="4P" />
+        <input type="hidden" name="frame" value="Positioning" />
 
         <label for="title">タイトル</label><br />
         <c:out value="${sessionScope.users_title.title}" />
         <br /><br />
 
         <label for="attri">特定の製品属性：品質や素材など競合商品と差別化できる要素は？？</label><br />
-        <textarea name="attri" rows="1" cols="50">${position.attri}</textarea>
+        <textarea name="attri" rows="4" cols="30">${position.attri}</textarea>
         <br /><br />
 
         <label for="benefit">提供するベネフィット：顧客のニーズに対して製品が満たす要素は？？</label><br />
-        <textarea name="benefit" rows="1" cols="50">${position.benefit}</textarea>
+        <textarea name="benefit" rows="4" cols="30">${position.benefit}</textarea>
         <br /><br />
 
         <label for="opp">製品が使用される機会：顧客が製品を使用する場面は？？</label><br />
-        <textarea name="opp" rows="1" cols="50">${position.opp}</textarea>
+        <textarea name="opp" rows="4" cols="30">${position.opp}</textarea>
         <br /><br />
 
         <label for="relation">競合製品との関係：競合製品と自社製品の関係性は？？</label><br />
-        <textarea name="relation" rows="1" cols="50">${position.relation}</textarea>
+        <textarea name="relation" rows="4" cols="30">${position.relation}</textarea>
         <br /><br />
 
         <label for="distance">競合製品と距離：自社製品独自の特性は？？</label><br />
-        <textarea name="distance" rows="1" cols="50">${position.distance}</textarea>
+        <textarea name="distance" rows="4" cols="30">${position.distance}</textarea>
         <br /><br />
 
         <label for="kind">製品の種類：自社の製品が含まれる種類やカテゴリーごとにポジショニングを検討する</label><br />
-        <textarea name="kind" rows="1" cols="50">${position.kind}</textarea>
+        <textarea name="kind" rows="4" cols="30">${position.kind}</textarea>
         <br /><br />
 
         <p>ポジショニングマップの縦・横軸設定</p>

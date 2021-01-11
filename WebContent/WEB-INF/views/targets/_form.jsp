@@ -21,7 +21,7 @@
         <br />
 
         <label for="frame"></label><br />
-        <input type="hidden" name="frame" value="Segmentation" />
+        <input type="hidden" name="frame" value="Targeting" />
 
         <label for="title">タイトル</label><br />
         <c:out value="${sessionScope.users_title.title}" />

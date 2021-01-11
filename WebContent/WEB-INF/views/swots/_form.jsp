@@ -26,19 +26,19 @@
 <br /><br />
 
 <label for="strong">Strength:　目標達成にプラスとなる企業内部の特質は？</label><br />
-<textarea name="strong" rows="1" cols="50">${swot.strong}</textarea>
+<textarea name="strong" rows="3" cols="40">${swot.strong}</textarea>
 <br /><br />
 
 <label for="weak">Weakness:　目標達成の障害となる企業内部の特質は？</label><br />
-<textarea name="weak" rows="1" cols="50">${swot.weak}</textarea>
+<textarea name="weak" rows="3" cols="40">${swot.weak}</textarea>
 <br /><br />
 
 <label for="opp">Opportunity:　目標達成にプラスとなる外部の特質で市場拡大の可能性や競争優位の可能性は？</label><br />
-<textarea name="opp" rows="1" cols="50">${swot.opp}</textarea>
+<textarea name="opp" rows="3" cols="40">${swot.opp}</textarea>
 <br /><br />
 
 <label for="thre">Tread:　目標達成の障害となる外部の特質で市場縮小の可能性や競争激化の可能性は？</label><br />
-<textarea name="thre" rows="1" cols="50">${swot.thre}</textarea>
+<textarea name="thre" rows="3" cols="40">${swot.thre}</textarea>
 <br /><br />
 
 <select name="show_flag">

@@ -37,7 +37,34 @@ public class FourpsShowServlet extends HttpServlet {
         Fourp f = em.find(Fourp.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
-
+        String product1 = f.getProduct();
+        if(product1.indexOf("\r\n") >= 1){
+            String product2 = product1.replace("\r\n", "z");
+            request.setAttribute("product", product2);
+        }else{
+            request.setAttribute("product", f.getProduct());
+        }
+        String price1 = f.getPrice();
+        if(price1.indexOf("\r\n") >= 1){
+            String price2 = price1.replace("\r\n", "z");
+            request.setAttribute("price", price2);
+        }else{
+            request.setAttribute("price", f.getPrice());
+        }
+        String place1 = f.getPlace();
+        if(place1.indexOf("\r\n") >= 1){
+            String place2 = place1.replace("\r\n", "z");
+            request.setAttribute("place", place2);
+        }else{
+            request.setAttribute("place", f.getPlace());
+        }
+        String promotion1 = f.getPromotion();
+        if(promotion1.indexOf("\r\n") >= 1){
+            String promotion2 = promotion1.replace("\r\n", "z");
+            request.setAttribute("promotion", promotion2);
+        }else{
+            request.setAttribute("promotion", f.getPromotion());
+        }
         request.setAttribute("fourp", f);
         request.setAttribute("_token", request.getSession().getId());
 
